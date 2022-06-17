@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Robots" content="noindex, nofollow" />
+    <meta name="Author" content="Pyramid Consulting Vietnam" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <title>Building Bell</title>
+    <link rel="stylesheet" href="~/Content/css/global.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/css/master.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/smaller.css" media="only screen and (max-width: 1080px)" />
+
+    <!--auto complete-->
+    <link type="text/css" href="~/Content/css/combobox/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+    <link type="text/css" rel="stylesheet" href="~/Content/css/combobox/combobox.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="~/Content/css/combobox/combobox-theme.css" media="all" />
+    <link rel="stylesheet" href="~/Content/css/combobox/jquery-ui-home.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/css/combobox/ui.theme.css" type="text/css" media="all" />
+    <!--auto complete-->
+    <!--pop-up-->
+    <link href="~/Content/css/demo_popup.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="BlueTheme">
+    <div id="outer">
+        <div id="headerHome">
+            <!--Top Navigation Bar-->
+            @Html.Sitecore().Placeholder("top_nav_bar")
+            <div class="Clr">
+            </div>
+            <!--banner main of page, click Button will open popup window-->
+            <div class="Banner">
+                <div class="Logo">
+                    <img src="~/Content/images/logo-home.png" alt="Building Bell Logo" />
+                </div>
+                <div class="ButtonHome">
+                    <a href="/HomeCaseSudy" id="button"> <img src="~/Content/images/button-home.png" alt="Building Bell Logo" title="Building Bell Logo" /></a>
+                </div>
+                <div class="MapHome">
+                    <img src="~/Content/images/map-home.png" alt="Building Bell Logo" />
+                </div>
+            </div>
+        </div>
+        <!--Rendering Body-->
+        @Html.Sitecore().Placeholder("main_body")
+        <div id="Footer" class="FooterMargin">
+            <div id="FooterContent">
+                <div class="FooterBlock01">
+                    <h3 class="FooterHeading"> About</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in velit id metus
+                        dignissim tincidunt vitae vitae nulla. In tortor enim, aliquam nec semper in, rhoncus
+                        faucibus augue,...
+                    </p>
+                </div>
+                <div class="FooterBlock02">
+                    <p class="CopyrightText">
+                        &copy; @DateTime.Now.Year Buildingbell &ndash; <a href="mailto:info@buildingbell.com" title="Send mail to info@buildingbell.com"> info@buildingbell.com</a> &ndash; Legal information
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--popup content-->
+    <!--Add 2 div background-->
+    <div id="popupContainer" class="hidden">
+        <div id="popupContainerBottom">
+            <div id="popupContainerMiddle">
+                <a id="close" class="hidden" title="close popup" style="display: inline;"></a>
+                <h2 class="TitleH2 DarkScheme"><strong>Bulding Bell </strong>in 60 sec </h2>
+                <iframe src="http://www.youtube.com/embed/eNBNDvkQ2XQ" frameborder="0" allowfullscreen="true"></iframe>
+            </div>
+        </div>
+    </div>
+    <!--Add 2 div background-->
+    <div id="overlayEffect"></div>
+    <!--end popup content-->
+    <!--Js General-->
+    <script type="text/javascript" src="~/Content/js/jquery-core.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery-ui-core.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.mediaqueries.js"></script>
+
+    <!--Pop-up-->
+    <script src="~/Content/js/script.js" type="text/javascript"></script>
+
+    <!--End Pop-up-->
+    <!--auto complete-->
+    <script type="text/javascript" src="~/Content/js/combobox/j-mousewheel.js"></script>
+    <script type="text/javascript" src="~/Content/js/combobox/jquery.jscrollpane.js"></script>
+    <script src="~/Content/js/combobox/jquery.ui.widget.js" type="text/javascript"></script>
+    <script src="~/Content/js/combobox/jquery.ui.button.js" type="text/javascript"></script>
+    <script src="~/Content/js/combobox/jquery.ui.position.js" type="text/javascript"></script>
+    <script src="~/Content/js/combobox/jquery.ui.autocomplete.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Content/js/common.js"></script>
+    <!--auto complete-->
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* jLightBox (using jQuery library).
+*--------------------------------------------*
+*  @author : ukhome ( ukhome@gmail.com | ntkhoa_friends@yahoo.com )
+*--------------------------------------------*
+*  @released : 24-Mar-2009 : version 1.0
+*--------------------------------------------*
+*  @revision history : ( latest version : 1.0 )
+*--------------------------------------------*
+*      + 24-Mar-2009 : version 1.0
+*          - released
+*--------------------------------------------*
+*/
+
+/* Add Theme to Container Div: classname = Your theme classname */
+div.Theme_BuildingBell_Wrapper {/*Wrap all*/
+    width: 200px;
+    height: 30px;
+    background: url(../images/residence.png) left top no-repeat;
+    float: left;
+    margin: 0 20px 0 0;
+    padding-bottom: 10px;
+}
+    div.Theme_BuildingBell_List {/*Wrap UL*/
+        border: 1px solid #cdcdcd;
+        margin: 1px 0 0;
+    }
+	/*-----Change----------->*/
+    div.Theme_BuildingBell_Wrapper p {
+        width: 200px;
+        height: 20px;            
+        font-size: 14px;
+        padding: 7px 0 0 10px;
+        cursor: pointer;
+        overflow: hidden !important;
+    }
+	/*-----Change----------->*/
+   /*--------------------------------*/
+  div.Theme_BuildingBell_Wrapper_Home {/*Wrap all*/
+    width: 200px;
+    height: 32px;
+    background: url(../images/select-button.png) left top no-repeat;
+    float: left;
+    margin: 0 30px 0 0;
+}
+    div.Theme_BuildingBell_List {/*Wrap UL*/
+        border: 1px solid #cdcdcd;
+        margin: 1px 0 0;
+    }
+    div.Theme_BuildingBell_Wrapper_Home p {
+        width: 200px;
+        height: 25px;      
+        color: #66a3b2;  
+        font-size: 14px;
+        padding: 7px 0 0 14px;
+        cursor: pointer;
+        overflow: hidden !important;
+    }
+
+    /* UL */
+    div.Theme_BuildingBell_List ul.Theme_BuildingBell {
+        width: 200px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-color: #fff;
+        padding-left: 1px;
+    }
+        div.Theme_BuildingBell_List ul.Theme_BuildingBell li {
+            width: 100%;
+            padding: 0;
+            font-size: 14px;
+            border-top: 1px solid #f4f4f4;
+        }
+        div.Theme_BuildingBell_List ul.Theme_BuildingBell li.First {
+            border-top: none !important;
+        }
+        /*use for optgroup name*/
+        div.Theme_BuildingBell_List ul.Theme_BuildingBell li span {
+            font-size: 14px;
+            font-weight: bolder;            
+            display: block;
+            padding: 4px 0;
+            cursor: default;
+            padding: 6px 0 6px 14px;
+        }
+        /*Normal*/
+            div.Theme_BuildingBell_List ul.Theme_BuildingBell li a:link,
+            div.Theme_BuildingBell_List ul.Theme_BuildingBell li a:visited {
+                display: block;
+                width: 200px;
+                font-size: 14px;                
+                padding: 5px 0px 7px 14px;
+                overflow: hidden;
+                text-decoration: none;
+             }
+             /*Active*/
+            div.Theme_BuildingBell_List ul.Theme_BuildingBell li.Active a:link,
+            div.Theme_BuildingBell_List ul.Theme_BuildingBell li.Active a:visited {
+                text-decoration: none;                
+            }
+            /*Hover*/
+            div.Theme_BuildingBell_List ul.Theme_BuildingBell li.Hover a:link,
+            div.Theme_BuildingBell_List ul.Theme_BuildingBell li.Hover a:visited {
+                text-decoration: none;
+                color: #fff;
+                background: #d7dc00;
+            }
+
+            /*level 2 - in case has optgroup*/
+            div.Theme_BuildingBell_List ul.Theme_BuildingBell li ul {
+                border: none;
+            }
+                div.Theme_BuildingBell_List ul.Theme_BuildingBell li ul li {
+                    font-size: 14px;
+                }
+                    div.Theme_BuildingBell_List ul.Theme_BuildingBell li ul li a:link,
+                    div.Theme_BuildingBell_List ul.Theme_BuildingBell li ul li a:visited {
+                        width: 200px;
+                        padding: 5px 0px 7px 24px;
+                        font-weight: normal;
+                    }

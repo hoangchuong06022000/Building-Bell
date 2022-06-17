@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0947257-07F1-4CF5-ADE5-62B7B8E5752A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SitecoreCaseStudy</RootNamespace>
+    <AssemblyName>SitecoreCaseStudy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.2.1.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Caching, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Caching.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Configuration, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Configuration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.ServiceBus, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.ServiceBus.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mvp.Xml, Version=2.3.0.0, Culture=neutral, PublicKeyToken=6ead800d778c9b9f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Mvp.Xml.2.3.0\lib\net20\Mvp.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\RazorGenerator.Mvc.2.4.9\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=13.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.Kernel.9.2.0\lib\net471\Sitecore.Kernel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Logging, Version=13.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.Logging.9.2.0\lib\net471\Sitecore.Logging.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Logging.Client, Version=13.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.Logging.Client.9.2.0\lib\net471\Sitecore.Logging.Client.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.Mvc.9.2.0\lib\net471\Sitecore.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Nexus.Consumption, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9de34fe2109de40c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.Nexus.Consumption.1.1.0\lib\netstandard2.0\Sitecore.Nexus.Consumption.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Nexus.Licensing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9de34fe2109de40c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.Nexus.Licensing.2.0.6\lib\netstandard2.0\Sitecore.Nexus.Licensing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.NVelocity, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.NVelocity.9.2.0\lib\net471\Sitecore.NVelocity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Web, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.Web.9.2.0\lib\net471\Sitecore.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Zip, Version=12.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Sitecore.Zip.9.2.0\lib\net471\Sitecore.Zip.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="sysglobl" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\System.Security.Cryptography.Xml.4.5.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\packages\WebActivatorEx.2.0.3\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\TransactionCategory.cs" />
+    <Compile Include="Models\TransactionType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\combobox\combobox-theme.css" />
+    <Content Include="Content\css\combobox\combobox.css" />
+    <Content Include="Content\css\combobox\jquery-ui-home.css" />
+    <Content Include="Content\css\combobox\jquery-ui.css" />
+    <Content Include="Content\css\combobox\jquery.jscrollpane.css" />
+    <Content Include="Content\css\combobox\ui.theme.css" />
+    <Content Include="Content\css\demo_popup.css" />
+    <Content Include="Content\css\global.css" />
+    <Content Include="Content\css\ie7-fix.css" />
+    <Content Include="Content\css\ie8-fix.css" />
+    <Content Include="Content\css\j-carousel.css" />
+    <Content Include="Content\css\j-scrollpane-theme.css" />
+    <Content Include="Content\css\j-scrollpane.css" />
+    <Content Include="Content\css\j-select-theme-home.css" />
+    <Content Include="Content\css\j-select-theme.css" />
+    <Content Include="Content\css\j-select.css" />
+    <Content Include="Content\css\jquery-combobox-autocomplete.css" />
+    <Content Include="Content\css\jquery-ui-1.8.7.custom.css" />
+    <Content Include="Content\css\main-.css" />
+    <Content Include="Content\css\master.css" />
+    <Content Include="Content\css\smaller.css" />
+    <Content Include="Content\images\about-block-bg.jpg" />
+    <Content Include="Content\images\about-img-01.png" />
+    <Content Include="Content\images\ads-banner-01.jpg" />
+    <Content Include="Content\images\arrow-group-01.png" />
+    <Content Include="Content\images\article-img-01.jpg" />
+    <Content Include="Content\images\back-btn-01-left.png" />
+    <Content Include="Content\images\back-btn-01-right.png" />
+    <Content Include="Content\images\back-btn-02-left.png" />
+    <Content Include="Content\images\back-btn-02-right.png" />
+    <Content Include="Content\images\bg-select-button.png" />
+    <Content Include="Content\images\bg-select-text.png" />
+    <Content Include="Content\images\border1.png" />
+    <Content Include="Content\images\border2.png" />
+    <Content Include="Content\images\box-1.png" />
+    <Content Include="Content\images\box-2.png" />
+    <Content Include="Content\images\box-3.png" />
+    <Content Include="Content\images\bullet-01.png" />
+    <Content Include="Content\images\bullet-02.png" />
+    <Content Include="Content\images\bullet-03.png" />
+    <Content Include="Content\images\bullet-04.png" />
+    <Content Include="Content\images\button-home.png" />
+    <Content Include="Content\images\button-search.png" />
+    <Content Include="Content\images\carousel-img-01.jpg" />
+    <Content Include="Content\images\carousel-img-02.jpg" />
+    <Content Include="Content\images\carousel-img-03.jpg" />
+    <Content Include="Content\images\carousel-img-04.jpg" />
+    <Content Include="Content\images\carousel-img-05.jpg" />
+    <Content Include="Content\images\check-button.png" />
+    <Content Include="Content\images\close_button.png" />
+    <Content Include="Content\images\column-balance--01.png" />
+    <Content Include="Content\images\column-balance-01-.png" />
+    <Content Include="Content\images\column-balance-01.png" />
+    <Content Include="Content\images\common-btn-01-left.png" />
+    <Content Include="Content\images\common-btn-01-right.png" />
+    <Content Include="Content\images\common-btn-02-left.png" />
+    <Content Include="Content\images\common-btn-02-right.png" />
+    <Content Include="Content\images\common-btn-03-left.png" />
+    <Content Include="Content\images\common-btn-03-right.png" />
+    <Content Include="Content\images\contact-icon-group-2.png" />
+    <Content Include="Content\images\contact-icon-group.png" />
+    <Content Include="Content\images\contact.jpg" />
+    <Content Include="Content\images\content-bg-bottom-2-.png" />
+    <Content Include="Content\images\content-bg-bottom-2.png" />
+    <Content Include="Content\images\content-bg-bottom-2_.png" />
+    <Content Include="Content\images\content-bg-bottom-3.png" />
+    <Content Include="Content\images\content-bg-bottom.png" />
+    <Content Include="Content\images\content-bg-loop-2.png" />
+    <Content Include="Content\images\content-bg-loop.png" />
+    <Content Include="Content\images\content-bg-top-2.png" />
+    <Content Include="Content\images\content-bg-top.png" />
+    <Content Include="Content\images\content-bottom-2.png" />
+    <Content Include="Content\images\content-bottom-3.png" />
+    <Content Include="Content\images\content-bottom.png" />
+    <Content Include="Content\images\content-top-1.png" />
+    <Content Include="Content\images\content-top.png" />
+    <Content Include="Content\images\download-icon.png" />
+    <Content Include="Content\images\drag.gif" />
+    <Content Include="Content\images\footer-bg-blue.jpg" />
+    <Content Include="Content\images\global-bg-blue.jpg" />
+    <Content Include="Content\images\google-map-fpo-2.jpg" />
+    <Content Include="Content\images\google-map-fpo-3.jpg" />
+    <Content Include="Content\images\google-map-fpo.jpg" />
+    <Content Include="Content\images\home-icon-01.png" />
+    <Content Include="Content\images\home-seperate--bg.png" />
+    <Content Include="Content\images\home-seperate-bg--.png" />
+    <Content Include="Content\images\home-seperate-bg-.png" />
+    <Content Include="Content\images\home-seperate-bg.png" />
+    <Content Include="Content\images\hr-bg-2.png" />
+    <Content Include="Content\images\hr-bg-3.png" />
+    <Content Include="Content\images\hr-bg-4.png" />
+    <Content Include="Content\images\hr-bg.png" />
+    <Content Include="Content\images\icon-buildingbell.png" />
+    <Content Include="Content\images\img-frame-01-left.png" />
+    <Content Include="Content\images\img-frame-01-right.png" />
+    <Content Include="Content\images\indicator-01.png" />
+    <Content Include="Content\images\lakewood-zoom.jpg" />
+    <Content Include="Content\images\lakewood.jpg" />
+    <Content Include="Content\images\line-bottom.jpg" />
+    <Content Include="Content\images\line-top.jpg" />
+    <Content Include="Content\images\location-logo-01.png" />
+    <Content Include="Content\images\log-in-fail.png" />
+    <Content Include="Content\images\log-in-success.png" />
+    <Content Include="Content\images\login-bottom-.png" />
+    <Content Include="Content\images\login-bottom.png" />
+    <Content Include="Content\images\login-left.png" />
+    <Content Include="Content\images\login-right.png" />
+    <Content Include="Content\images\login-top.png" />
+    <Content Include="Content\images\logo-home.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logout-left.png" />
+    <Content Include="Content\images\logout-right.png" />
+    <Content Include="Content\images\log_in_fail.jpg" />
+    <Content Include="Content\images\log_in_fail.png" />
+    <Content Include="Content\images\mainnav-item-left.png" />
+    <Content Include="Content\images\mainnav-item-right.png" />
+    <Content Include="Content\images\map-home.png" />
+    <Content Include="Content\images\navigation-block-blue-2.png" />
+    <Content Include="Content\images\navigation-block-blue.png" />
+    <Content Include="Content\images\navigation-block.png" />
+    <Content Include="Content\images\news.png" />
+    <Content Include="Content\images\next-btn-01-left.png" />
+    <Content Include="Content\images\next-btn-01-right.png" />
+    <Content Include="Content\images\next-btn-02-left.png" />
+    <Content Include="Content\images\next-btn-02-right.png" />
+    <Content Include="Content\images\next-horizontal.png" />
+    <Content Include="Content\images\paging-active-bg.jpg" />
+    <Content Include="Content\images\photo-block-01.png" />
+    <Content Include="Content\images\pop-up-bottom.png" />
+    <Content Include="Content\images\pop-up-mid.png" />
+    <Content Include="Content\images\pop-up-top.png" />
+    <Content Include="Content\images\pop-up.jpg" />
+    <Content Include="Content\images\pop-up.png" />
+    <Content Include="Content\images\prev-horizontal.png" />
+    <Content Include="Content\images\residence-button.png" />
+    <Content Include="Content\images\residence-text.png" />
+    <Content Include="Content\images\residence.png" />
+    <Content Include="Content\images\result-photo-block-top.png" />
+    <Content Include="Content\images\sample-carousel-img-view-zoom.jpg" />
+    <Content Include="Content\images\sample-carousel-img-view.jpg" />
+    <Content Include="Content\images\search-box-left.png" />
+    <Content Include="Content\images\search-box-right.png" />
+    <Content Include="Content\images\search-home-button.jpg" />
+    <Content Include="Content\images\search-home.png" />
+    <Content Include="Content\images\search-result-img-01.jpg" />
+    <Content Include="Content\images\select-home.png" />
+    <Content Include="Content\images\share-btn-01.png" />
+    <Content Include="Content\images\share-btn-02.png" />
+    <Content Include="Content\images\share-icon.png" />
+    <Content Include="Content\images\sidebar-active-bg.png" />
+    <Content Include="Content\images\sidebar-bg.png" />
+    <Content Include="Content\images\sidebar-separator.png" />
+    <Content Include="Content\images\text-input-left-error.jpg" />
+    <Content Include="Content\images\text-input-left.png" />
+    <Content Include="Content\images\text-input-right-error.jpg" />
+    <Content Include="Content\images\text-input-right.png" />
+    <Content Include="Content\images\text-input-style-01.png" />
+    <Content Include="Content\images\tooltip-01-bottom.png" />
+    <Content Include="Content\images\tooltip-01-top.png" />
+    <Content Include="Content\images\track.gif" />
+    <Content Include="Content\js\combobox\j-mousewheel.js" />
+    <Content Include="Content\js\combobox\jquery-scrollpane.js" />
+    <Content Include="Content\js\combobox\jquery.jscrollpane.js" />
+    <Content Include="Content\js\combobox\jquery.ui.autocomplete.js" />
+    <Content Include="Content\js\combobox\jquery.ui.button.js" />
+    <Content Include="Content\js\combobox\jquery.ui.position.js" />
+    <Content Include="Content\js\combobox\jquery.ui.widget.js" />
+    <Content Include="Content\js\common.js" />
+    <Content Include="Content\js\j-carousel.js" />
+    <Content Include="Content\js\j-mousewheel.js" />
+    <Content Include="Content\js\j-scrollpane.js" />
+    <Content Include="Content\js\j-select.external.js" />
+    <Content Include="Content\js\j-select.js" />
+    <Content Include="Content\js\jquery-core.js" />
+    <Content Include="Content\js\jquery-ui-core.js" />
+    <Content Include="Content\js\jquery.colorbox.js" />
+    <Content Include="Content\js\jquery.lightbox-0.5.min.js" />
+    <Content Include="Content\js\jquery.mediaqueries.js" />
+    <Content Include="Content\js\PIE.htc" />
+    <Content Include="Content\js\script.js" />
+    <Content Include="Content\type\daxcondensed-bold-webfont.svg" />
+    <Content Include="Content\type\daxcondensed-medium-webfont.svg" />
+    <Content Include="Content\type\daxcondensed-regular-webfont.svg" />
+    <Content Include="Content\type\daxcondensed-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\images\Thumbs.db" />
+    <Content Include="Content\type\daxcondensed-bold-webfont.eot" />
+    <Content Include="Content\type\daxcondensed-bold-webfont.ttf" />
+    <Content Include="Content\type\daxcondensed-bold-webfont.woff" />
+    <Content Include="Content\type\daxcondensed-medium-webfont.eot" />
+    <Content Include="Content\type\daxcondensed-medium-webfont.ttf" />
+    <Content Include="Content\type\daxcondensed-medium-webfont.woff" />
+    <Content Include="Content\type\daxcondensed-regular-webfont.eot" />
+    <Content Include="Content\type\daxcondensed-regular-webfont.ttf" />
+    <Content Include="Content\type\daxcondensed-regular-webfont.woff" />
+    <Content Include="Content\type\daxcondensed-webfont.eot" />
+    <Content Include="Content\type\daxcondensed-webfont.ttf" />
+    <Content Include="Content\type\daxcondensed-webfont.woff" />
+    <None Include="Properties\PublishProfiles\Debug.pubxml" />
+    <Content Include="Views\Layouts\HomeLayout.cshtml" />
+    <Content Include="Views\Renderings\Home\NewsContentHome.cshtml" />
+    <Content Include="Views\Renderings\Home\TransactionBlockHome.cshtml" />
+    <Content Include="Views\Renderings\Home\RegisterBox.cshtml" />
+    <Content Include="Views\Renderings\Home\LoginBox.cshtml" />
+    <Content Include="Views\Renderings\News\NewsList.cshtml" />
+    <Content Include="Views\Renderings\News\NewsDetails.cshtml" />
+    <Content Include="Views\Renderings\Transaction\TransactionList.cshtml" />
+    <Content Include="Views\Renderings\Transaction\TransactionDetails.cshtml" />
+    <Content Include="Views\Renderings\Shared\TopNavBar.cshtml" />
+    <Content Include="Views\Renderings\Home\HomePage.cshtml" />
+    <Content Include="Views\Layouts\OthersLayout.cshtml" />
+    <None Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49549</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49549/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

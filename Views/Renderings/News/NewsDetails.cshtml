@@ -1,0 +1,38 @@
+﻿@model SitecoreCaseStudy.Models.News
+
+<div id="content">
+    <div id="innerContent01">
+        <div id="innerContent02">
+            <div id="mainContent">
+                <div class="BlockPageNavigation BlockPageNavigationAlt04 TitleLeft MarginButtonNews">
+                    <a href="/NewsList" title="Back to list" class="BackBtn"><span class="ColorBackBtn">Back to list</span></a>
+                </div>
+
+                <div class="Clr">
+                </div>
+                <div class="HrReplacement HrStyle01"><hr class="Hidden" /></div>
+                <!-----Change----------->
+                <h2 class="PageHeading DarkScheme  MarginNews">News</h2>
+                <!-----Change----------->
+                <div class="BlockArticle">
+                    <div class="BlockSideContent">
+                        @Model.Image
+                    </div>
+
+                    <div class="BlockMainArticle">
+                        <h3 class="ArticleTitle DarkScheme">@Model.Title</h3>
+                        <h3 class="ArticleTitle DarkScheme">@Model.Date</h3>
+
+                        <p class="CommonParagraph1  LightScheme">
+                            Summary: @Model.Summary
+                        </p>
+
+                        <p class="CommonParagraph1  LightScheme">
+                            @Model.Body
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

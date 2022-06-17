@@ -1,0 +1,158 @@
+﻿@model SitecoreCaseStudy.Models.Transaction
+
+<div id="content">
+    <div id="innerContent01">
+        <div id="innerContent02">
+            <div id="mainContent">
+                <!--Images Slide -->
+                <div class="BackButton">
+                    <a href="/TransactionList" title="Back to list" class="BackBtn "><span class="ColorBackBtn">Back to list</span></a>
+                </div>
+                <div class="BlockPageNavigation NavigationButton PaddingTransSearch">
+                    <a href="#" title="Prev" class="BackBtn BackBtnSmall"><span>Prev</span></a>
+                    <div class="CenteringBlock">
+                        <ul class="PagingIndex">
+                            <li>
+                                <a href="#" title="">1</a>
+                            </li>
+                            <li>
+                                <span>2</span>
+                            </li>
+                            <li>
+                                <a href="#" title="">3</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">4</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">5</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">...</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" title="Next" class="NextBtn NextBtnSmall"><span>Next</span></a>
+                </div>
+                <div class="HrReplacement HrStyle05 LineNavigation1">
+                    <hr class="Hidden" />
+                </div>
+                <div class="ShowImageInfor">
+                    <!--add a tag to zoom image-->
+                    <a href="~/Content/images/sample-carousel-img-view-zoom.jpg" title="" class="ShowCaseZoom"><img src="~/Content/images/sample-carousel-img-view.jpg" title="" alt="" class="ShowcaseImg ShowcaseImgMargin " /></a>
+                    @Model.Image
+                    <!--add a tag to zoom image-->
+                    <div class=" BlockSearchItemInfo01Alt01 BlockSearchItemInfo01 LightScheme WidthTrans">
+                        <span>Posted by : Admin</span>
+                        <br />
+                        <br />
+                        @Model.Country
+                        <br />
+                        <br />
+                        <strong class="DarkScheme ShowItem Price">@Model.FormatedCost &euro;</strong>
+                        <p class="SummaryTranssearch">
+                            @Model.Summary
+                        </p>
+                    </div>
+                </div>
+
+                <div class="Clr"></div>
+                <!--Slide Image-->
+                <div class="CarouselUIContainer">
+                    <ul id="transList" class="CarouselUI jcarousel-skin-buildingbell">
+                        <li class="Active">
+                            <!--Zoom img-->
+                            <a href="~/Content/images/sample-carousel-img-view-zoom.jpg" title="View details" class="ShowCase" rel="~/Content/images/sample-carousel-img-view.jpg">
+                                <!--Zoom img-->
+                                <span> <img src="~/Content/images/carousel-img-01.jpg" alt="" /></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/Content/images/lakewood-zoom.jpg" title="View details" class="ShowCase" rel="~/Content/images/lakewood.jpg"><span> <img src="~/Content/images/carousel-img-02.jpg" alt="" /></span></a>
+                        </li>
+                        <li>
+                            <a href="~/Content/images/sample-carousel-img-view-zoom.jpg" title="View details" class="ShowCase" rel="~/Content/images/sample-carousel-img-view.jpg"> <span> <img src="~/Content/images/carousel-img-03.jpg" alt="" /></span></a>
+                        </li>
+                        <li>
+                            <a href="~/Content/images/lakewood-zoom.jpg" title="View details" class="ShowCase" rel="~/Content/images/lakewood.jpg"><span> <img src="~/Content/images/carousel-img-04.jpg" alt="" /></span></a>
+                        </li>
+                        <li>
+                            <a href="~/Content/images/sample-carousel-img-view-zoom.jpg" title="View details" class="ShowCase" rel="~/Content/images/sample-carousel-img-view.jpg"> <span> <img src="~/Content/images/carousel-img-05.jpg" alt="" /></span></a>
+                        </li>
+                        <li>
+                            <a href="~/Content/images/sample-carousel-img-view-zoom.jpg" title="View details" class="ShowCase" rel="~/Content/images/lakewood.jpg"><span> <img src="~/Content/images/carousel-img-02.jpg" alt="" /></span></a>
+                        </li>
+                        <li>
+                            <a href="~/Content/images/lakewood-zoom.jpg" title="View details" class="ShowCase" rel="~/Content/images/lakewood.jpg"><span> <img src="~/Content/images/carousel-img-04.jpg" alt="" /></span></a>
+                        </li>
+                        <li>
+                            <a href="~/Content/images/sample-carousel-img-view-zoom.jpg" title="View details" class="ShowCase" rel="~/Content/images/sample-carousel-img-view.jpg"> <span> <img src="~/Content/images/carousel-img-05.jpg" alt="" /></span></a>
+                        </li>
+                        <li>
+                            <a href="~/Content/images/sample-carousel-img-view-zoom.jpg" title="View details" class="ShowCase" rel="~/Content/images/sample-carousel-img-view.jpg"> <span> <img src="~/Content/images/carousel-img-01.jpg" alt="" /></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="BlockDetailsInfo">
+                    <div class="MultiColumn01 Colum1">
+                        <p>
+                            <span>Category</span>@Model.TransactionCategoryName
+                        </p>
+                        <p>
+                            <span>Type</span>@Model.TransactionTypeName
+                        </p>
+                        <p>
+                            <span>Country</span>@Model.Country
+                        </p>
+                        <p>
+                            <span>Number of floors</span>@Model.NumberOfFloors
+                        </p>
+                    </div>
+                    <div class="MultiColumn01 Colum2">
+                        <p>
+                            <span>Area</span>@Model.Area
+                        </p>
+                        <p>
+                            <span>Number of bedrooms</span>@Model.NumberOfBedRooms
+                        </p>
+                        <p>
+                            <span>Number of bathrooms</span>@Model.NumberOfBathRooms
+                        </p>
+                        <p>
+                            <span>Property condition</span>@Model.PropertyCondition
+                        </p>
+                    </div>
+                </div>
+                <div class="HrReplacement HrStyle06">
+                    <hr class="Hidden" />
+                </div>
+                <div class="BlockPageNavigation NavigationButton1 BlockPageNavigationAlt02Mirror">
+                    <a href="#" title="Prev" class="BackBtn BackBtnSmall"><span>Prev</span></a>
+                    <div class="CenteringBlock">
+                        <ul class="PagingIndex">
+                            <li>
+                                <a href="#" title="">1</a>
+                            </li>
+                            <li>
+                                <span>2</span>
+                            </li>
+                            <li>
+                                <a href="#" title="">3</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">4</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">5</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">...</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" title="Next" class="NextBtn NextBtnSmall"><span>Next</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

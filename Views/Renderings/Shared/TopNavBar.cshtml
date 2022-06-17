@@ -1,0 +1,19 @@
+﻿@model IDictionary<string, string>
+
+<div id="navigationBlockHome">
+    <ul id="mainNav">
+        <li @*class="Active"*@><a href="/HomeCaseStudy" title="Home">Home</a></li>
+        <li><a href="/Residences" title="Residences">Residences</a></li>
+        <li><a href="/TransactionList" title="Transactions">Transactions</a></li>
+        <li><a href="/NewsList" title="News">News</a></li>
+        <li><a href="/Contact" title="Contact">Contact</a></li>
+    </ul>
+    <ul id="languageSelection">
+        @foreach (var language in Model)
+        {
+            <li><a href="@language.Value" title="@language.Key">@language.Key</a></li>
+        }
+    </ul>
+    <div class="Clr">
+    </div>
+</div>

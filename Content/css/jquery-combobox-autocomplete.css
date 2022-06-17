@@ -1,0 +1,19 @@
+.ui-button, .ui-button-icon
+{
+    margin-left: 0px;
+}
+.ui-button-icon-only .ui-button-text
+{
+    padding: 1px 0 0 0;
+}
+.ui-autocomplete-input
+{
+    margin: 0;
+    padding: 2px 0 1.5px 8px;
+    width: 262px;
+    height: 32px;
+    font-size: 1.4em !important;
+    background: url("../images/bg-select-text.png") no-repeat scroll left top transparent;
+}
+
+

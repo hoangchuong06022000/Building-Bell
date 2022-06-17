@@ -1,0 +1,2732 @@
+/*-----Text-color: Title, link----------*/
+.DarkScheme, .TextBold strong,  .FontH3Home a,.NewsText .H5 a, 
+.Box1Text,.Box2Text, .Box3Text	
+{
+	color: #00447f;
+}
+/*-----Font-color: Content----------*/    
+.LightScheme, .NextButton a, div.ThemeMiddle ul.ThemeMiddle li a:link, div.ThemeMiddle ul.ThemeMiddle li a:visited, div.Theme_BuildingBell_Wrapper p,
+div.Theme_BuildingBell_List ul.Theme_BuildingBell li.Active a:link, div.Theme_BuildingBell_List ul.Theme_BuildingBell li.Active a:visited,
+div.Theme_BuildingBell_List ul.Theme_BuildingBell li a:link, div.Theme_BuildingBell_List ul.Theme_BuildingBell li a:visited,
+div.Theme_BuildingBell_List ul.Theme_BuildingBell li span, .BlockDetailsInfo p span, .NewsText a, .ui-widget-content, .ui-widget-content a
+
+{
+    color: #66a3b2 ;
+}  
+/*-----Header-color: Content----------*/      
+ #navigationBlockHome #mainNav li a, #languageSelection li a,
+ #navigationBlock #mainNav li a
+ { 
+     color: #fff;
+  }
+/*-----Paging-color: Content----------*/ 
+.BackBtn span, .NextBtn span, .PagingIndex li span
+{
+    color: #fff;
+}     
+/*===========================================*/
+ 
+.BlueTheme { /* body */
+	background: #8faabf url(../images/global-bg-blue.jpg) no-repeat center top;
+}
+.BlueThemeHome { /* body */
+	background: #8faabf url(../images/global-bg-blue-home.jpg) no-repeat center top;
+}
+
+#outer {
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Common Block */
+    .CommonBtn01 {
+        display: block;
+        float: left;
+        background: url(../images/common-btn-01-left.png) no-repeat 0 0;
+        padding: 0 0 0 14px;
+    }
+        .CommonBtn01 span {
+            display: block;
+            float: left;
+            height: 22px;
+            padding: 8px 19px 0 10px;
+            text-indent: -5px;
+            background: url(../images/common-btn-01-right.png) no-repeat right 0;
+            font-size: 12px;
+            font-family: "DaxCondensedRegular";
+            text-transform: uppercase;
+            color: #fff;
+        }
+        .CommonBtn01:hover span {
+            color: #dfdfdf;
+            text-decoration: none;
+        }
+
+    .BlockPageNavigation {
+        /*width: 862px;*/
+		width: 866px;
+        overflow: hidden;
+        padding: 0 0 20px 0;
+        position: relative;
+        margin: 0 auto;		
+    }
+	 .BlockPageNavigation1 {
+        /*width: 862px;*/
+		width: 903px;
+        overflow: hidden;
+        padding: 0 0 20px 0;
+        position: relative;
+        margin: 0 auto;		
+    }
+	.BlockPageNavigation2{
+        /*width: 862px;*/
+		width: 905px;
+        overflow: hidden;
+        padding: 0 0 20px 0;
+        position: relative;
+        margin: 0 auto;		
+    }
+    .BlockPageNavigationMirror {
+        padding: 20px 27px 0 0;
+    }
+    .BlockPageNavigationSpacing01 {
+        padding: 0 69px 0 0;
+    }
+    .BlockPageNavigationMirrorSpacing01 {
+        padding: 0 27px 10px 0;
+    }
+    .BackBtn {
+        display: block;
+        float: left;
+        padding: 0 0 0 16px;
+        background: url(../images/back-btn-01-left.png) no-repeat 0 0;
+    }
+    .NextBtn {
+        display: block;
+        float: right;
+        padding: 0 16px 0 0;
+        background: url(../images/next-btn-01-right.png) no-repeat right 0;
+    }
+        .BackBtn span {
+            background: url(../images/back-btn-01-right.png) no-repeat right 0;
+        }
+        .NextBtn span {
+            background: url(../images/next-btn-01-left.png) no-repeat 0 0;
+        }
+        .BackBtn span,
+        .NextBtn span {
+            display: block;
+            font-size: 1.6em;
+            font-family: "DaxCondensedBold";            
+            text-transform: uppercase;
+            height: 23px;
+            padding: 7px 30px 0;
+            font-weight: normal;
+        }
+    .BackBtn:hover,
+    .NextBtn:hover {
+        text-decoration: none;
+    }
+        .BackBtn:hover span,
+        .NextBtn:hover span {
+            color: #f4f4f4;
+        }
+    .BackBtnSmall,
+    .NextBtnSmall {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+    }
+    .BackBtnSmall {
+        padding: 0 0 0 12px;
+        background: url(../images/back-btn-02-left.png) no-repeat 0 0;
+        left: 0;
+    }
+    .NextBtnSmall {
+        padding: 0 12px 0 0;
+        background: url(../images/next-btn-02-right.png) no-repeat right 0;
+        right: 27px;
+    }
+        .BackBtnSmall span {
+            background: url(../images/back-btn-02-right.png) no-repeat right 0;
+        }
+        .NextBtnSmall span {
+            background: url(../images/next-btn-02-left.png) no-repeat 0 0;
+        }
+        .BackBtnSmall span,
+        .NextBtnSmall span {
+            font-size: 1.6em;
+            font-family: "DaxCondensedBold";
+            height: 22px;
+            padding: 3px 30px 0;
+            font-weight: normal;
+        }
+    .BackBtnSmall:hover,
+    .NextBtnSmall:hover {
+        text-decoration: none;
+    }
+        .BackBtnSmall:hover span,
+        .NextBtnSmall:hover span {
+            color: #f4f4f4;
+        }
+    .CenteringBlock {
+       float: left;
+       width: 100%;
+       background: #fff;
+       overflow: hidden;
+       position: relative;
+    }
+    .PagingIndex {
+       clear: left;
+       float: left;
+       height: 25px;
+       margin: 0;
+       padding: 0;
+       position: relative;       
+       left: 50%;
+       text-align: center;       
+    }	
+        .PagingIndex li {
+            width: 22px;
+            height: 22px;
+            float: left;
+            display: block;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            right: 50%;
+			margin-top: 2px;
+        }
+            .PagingIndex li a,
+            .PagingIndex li span {
+                width: 22px;
+                height: 19px;
+                display: block;
+                float: left;
+                text-align: center;
+                font-size: 12px;
+                font-family: Arial;
+                font-weight: bolder;
+                padding: 3px 0 0;
+                text-shadow: 2px 2px 2px #ccc; /* note: not work for < ie9 */
+              
+            }
+            .PagingIndex li span {                
+                text-shadow: 1px 1px 2px #666; /* note: not work for < ie9 */
+                background: url(../images/paging-active-bg.jpg) no-repeat 0 0;
+            }
+            .PagingIndex li a {
+                color: #acb700;
+               
+            }
+	
+    #loginBoxSuccess
+{
+    width: 240px;
+    height: 251px;
+    background: url('../images/log-in-success.png') no-repeat 0 0;
+}
+        #loginBoxSuccess h3 {
+            color: #fff;
+            font-size: 28px;
+            font-family: "DaxCondensedMedium";
+            font-weight: normal;
+            text-align: center;
+            padding: 8px 0 0;
+        }
+        #loginBoxSuccess .WelcomeText {
+            width: 100%;
+            height: 75px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            font-size: 16px;
+            text-align: center;
+            padding: 47px 0 0;
+        }
+            #loginBoxSuccess .WelcomeText em {
+                font-style: normal;
+                text-decoration: underline;
+            }
+
+    .BoxContainer01 {
+    	background: url(../images/box-01-left.png) no-repeat 0 0;
+        padding: 0 0 0 13px;
+        float: left;
+        position: absolute;
+        top: 9px;
+        right: 0;
+    }
+        .BoxContainer01Inside {
+            float: left;
+            background: url(../images/box-01-right.png) no-repeat right 0;
+            padding: 3px 10px 0 0;
+        }
+
+    .ResultsList {}
+        .ResultsList li {
+            width: 180px;
+            margin: 0 30px 0px 0;
+            padding: 30px 0;
+            overflow: hidden;
+            float: left;
+        }
+            .BlockPhoto01 {
+                width: 180px;
+                height: 120px;
+                position: relative;
+                overflow: hidden;
+            }
+            .TopRoundedDecoration {
+                background: url(../images/result-photo-block-top.png) no-repeat 0 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 6px;
+                height: 0;
+                padding: 6px 0 0;
+                text-indent: -1000em;
+                overflow: hidden;
+            }
+           /*------------New - 18/04------------*/
+          	.SetSize img
+          	{
+          		width: 180px;
+          		height: 120px;
+          	}
+          	/*------------New - 18/04------------*/
+            .ShareBtn01 {
+                display: block;
+                width: 55px;
+                padding: 2px 0 0 34px;
+                height: 13px;
+                background: url(../images/share-btn-02.png) no-repeat 0 0;
+                position: absolute;
+                z-index: 1;
+                bottom: 0;
+                right: 0;
+            }
+                .ShareBtn01 a {
+                    font-size: 10px;
+                    font-family: Tahoma;
+                    color: #000;
+                    text-transform: uppercase;
+                    background: url(../images/share-icon.png) no-repeat 0 1px;
+                    padding: 0 0 0 17px;
+                }
+                .ShareBtn01 a:hover {}
+/* END. Common Block */
+
+/* Header */
+    #header {
+        width: 960px;        
+        padding: 38px 0 0 0;
+        margin: 0 auto;
+        position: relative;
+    }
+     
+    .BlueThemeHome #header {
+        padding: 19px 0 0;
+    }
+    
+  
+    .ShareBtnTop {
+        position: absolute;
+        top: 0;
+        right: -97px;        
+        width: 120px;
+        height: 19px;
+        padding: 5px 0 0;        
+        background: url(../images/share-btn-01.png) no-repeat 0 0;
+        line-height: 10px;
+        text-align: center;
+    }
+        .ShareBtnTop a {
+            font-family: Tahoma;
+            font-size: 10px;
+            color: #000;
+            text-transform: uppercase;
+            background: url(../images/share-icon.png) no-repeat 0 1px;
+            padding: 0 0px 0 18px;            
+            margin: 0 0 0 -6px;
+        }
+        .ShareBtnTop a:hover {}
+
+    .Logo {
+        width: 216px;
+        height: 50px;
+        float: left;        
+    }
+    .Logo h1
+    {
+        display: none;
+    }
+    
+	/*-------home------------------------*/
+	   #headerHome {
+        width: 960px;        
+        margin: 0 auto;
+        position: relative;
+    }
+    .ShareBtnTopHome {
+        position: absolute;
+        top: 0;
+        right: -97px;        
+        width: 120px;
+        height: 19px;
+        padding: 5px 0 0;        
+        background: url(../images/share-btn-01.png) no-repeat 0 0;
+        line-height: 12px;
+        
+    }
+        .ShareBtnTopHome a {
+            font-family: Tahoma;
+            font-size: 10px;
+            color: #000;
+            text-transform: uppercase;
+            background: url(../images/share-icon.png) no-repeat 0 1px;
+            padding: 0 0px 0 17px;            
+            margin: 0 0 0 32px;
+        } 
+        .ShareBtnTopHome a:hover {}
+    /*--------Navigation Home--------------------------------*/
+      #navigationBlockHome {
+        width: 615px;
+        height: 50px;       
+        background: url(../images/navigation-block.png) no-repeat 0 0;
+        float: right;
+        margin-top: 19px;
+        margin-right: 25px;
+    }
+       #navigationBlockHome #mainNav {
+            width: 498px;
+            height: 50px;
+            float: left;
+			margin-left: 5px;			                    
+        }
+           #navigationBlockHome  #mainNav li {
+                float: left;             
+                height: 40px;
+                font-size: 1.6em;                
+                font-family: "DaxCondensedMedium";  
+                text-transform: uppercase;
+                margin-top: 5px;
+                line-height: 41px;  
+                padding: 0 23px 0px 18px;
+            }
+           #navigationBlockHome  #mainNav li:last-child {
+           	margin-right: 0px;
+           }
+            #navigationBlockHome #mainNav li a {                                             
+               text-decoration: none;
+            }
+            #navigationBlockHome #mainNav li a:hover{           
+                color: #c9d300;
+            }
+    /*--------End Navigation Home--------------------------------*/
+    
+    /*--------Navigation SubSite--------------------------------*/
+     #navigationBlock {
+        width: 690px;
+        height: 50px;       
+        background: url(../images/navigation-block-blue.png) no-repeat 0 0;
+        float: right;
+    }
+    .BlueThemeHome #navigationBlock {
+        margin: 0 25px 0 0;
+        background: url(../images/navigation-block-blue-2.png) no-repeat 0 0;
+    }
+    #navigationBlock #mainNav 
+         {
+            width: 495px;
+            height: 50px;
+            float: left;
+            margin-left: 5px;	
+        }
+         #navigationBlock  #mainNav li {
+                float: left;             
+                height: 44px;
+                font-size: 1.6em;
+                font-family: "DaxCondensedMedium";  
+                text-transform: uppercase;
+                margin-top: 5px;
+                line-height: 42px;
+                padding: 0 16px 0px 25px;
+            }
+           #navigationBlock  #mainNav li:last-child
+           {
+               margin-right: 0px;
+           }
+          #navigationBlock  #mainNav li a {                
+               text-decoration: none;
+            }
+          #navigationBlock #mainNav li a:hover{           
+                color: #c9d300;
+            }
+    /*--------End Navigation SubSite--------------------------------*/
+    /*--------Navigation Acitve--------------------------------*/
+       #navigationBlockHome #mainNav li.Active,
+          #navigationBlock  #mainNav li.Active {
+           		padding: 0 23px 0px 23px;
+           }
+        #navigationBlockHome #mainNav li.Active,
+        #navigationBlock  #mainNav li.Active {             
+            height: 40px;            
+            position:relative;                
+            z-index: 9999;           
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            behavior: url(js/PIE.htc);
+			
+        }
+		 #navigationBlockHome #mainNav li.Active :hover,
+        #navigationBlock  #mainNav li.Active :hover{ color: #fff !important;}
+        
+        #navigationBlockHome #mainNav li.Active,
+        #navigationBlock  #mainNav li.Active,
+        #languageSelection li.Active,
+        .AboutPage
+            {                
+            background-color: #a9bf00;                
+        }
+        /*--------End Navigation Acitve--------------------------------*/
+            .Banner
+            {
+            	width: 960px;
+            	position: relative;  
+            	z-index: 1;	  	
+            }
+            .Banner .Logo
+            {
+            	width: 447px;
+            	height: 200px;
+            	position: absolute;
+            	top: 26px;
+            	left: 2px;
+            	z-index: 2;
+            	
+            }
+            .Banner .ButtonHome
+            {
+            	width: 61px;
+            	height: 61px;
+            	position: absolute;
+            	top: 165px;
+            	left: 278px;           	
+            	z-index: 2;
+            }
+            .Banner .MapHome
+            {
+            	width: 553px;
+            	height: 311px;
+            	position: absolute;
+            	top: 106px;
+            	right: 65px;           	
+            	z-index: 1;
+            }
+            /*----------Login----------------------------------*/
+#loginBox
+{
+    position: absolute;
+    z-index: 999;    
+    top: 12px;
+    right: -19px;
+}
+#loginBoxHomeTop
+{
+    width: 240px;
+    height: 270px;     
+    background: url('../images/login-top.png') no-repeat 0 0;
+}
+ .LoginBoxHomeHidden
+{      
+    background: url('../images/log_in_fail.png') repeat-y 0 0;
+    color: #990000  !important;
+    font-size: 1.1em;	
+}
+.LoginBoxHomeHidden label
+{
+	width: 200px;	
+	display: block;
+	margin-top: 5px;
+	font-size: 14px;
+}
+.PaddingHiddenHome
+{
+	  padding: 0 0 7px 20px;
+}
+ .PaddingHiddenSub
+{
+    padding: 31px 0 7px 32px;  
+}
+ #loginBoxHomeBottom
+{
+    width: 240px;
+    height: 31px;    
+    background: url('../images/login-bottom.png') no-repeat 0 0;
+}
+        #loginBoxHomeTop h2 {
+            color: #fff;
+            font-size: 3em;
+            font-family: "DaxCondensedMedium";
+            font-weight: normal;
+            margin-left: 19px;
+            padding: 10px 0 0;
+            font-weight: normal;
+        }
+        #loginBoxHomeTop .WelcomeText {
+            width: 100%;
+            height: 75px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            font-size: 16px;
+            text-align: center;
+            padding: 45px 0 0;
+        }
+            #loginBoxHomeTop .WelcomeText em {
+                font-style: normal;
+                text-decoration: underline;
+            }
+			/*-------New - 20/04----------------*/
+			#loginBoxHomeTop .InputLogin
+			{
+				padding: 32px 0 0 20px;
+			}
+			/*-------New - 20/04----------------*/
+			.LogiinError
+			{
+			    color: #990000 !important;
+			}
+			/*--------Change this------------------------------*/
+			.SelectInput
+			{
+				width: 179px;				
+				background: url(../images/select-home.png) left top no-repeat;    
+				margin-bottom: 9px;				
+				/*padding: 7px 10px 5px 11px;*/
+				padding: 6px 12px 6px 9px;							
+			}
+			.SelectInput .InputHome
+			{
+				width: 180px;
+				padding: 2px 0px;		
+				border: medium none;
+				font-size: 1.4em;		
+				outline: none;		
+			}
+			/*--------End Change this------------------------------*/
+			.SelectResidence
+			{
+				width: 200px;
+				height: 30px;
+				border: none;
+				background: url(../images/select-button.png) left top no-repeat;
+				margin-bottom: 10px;
+				font-size: 1.4em;			
+				padding: 0px 2px 0px 9px ;				
+			}
+			 .ddcombo
+            {   
+                margin-bottom:10px;
+                font-size: 1.4em;
+            }
+			.OptionColor
+			{
+				background-color: #fff;
+			}
+			.ForgotPass
+			{	
+				display: block;
+				font-family: Arial;
+				font-size: 1.1em;
+				width: 139px;
+				margin-top: -2px;
+			}
+			/*-------New - 20/04----------------*/
+			.MarginLogin
+			{
+				margin-top: 5px !important;
+								
+			}
+			/*-------New - 20/04----------------*/
+			.ForgotPass a
+			{
+				text-decoration: underline;
+				color: #fff;
+			}
+			.ForgotPass a:hover
+			{
+				text-decoration: none;
+				color: #fff;
+			}
+			/*-------New - 20/04----------------*/						
+		.LoginButtonLeft {
+			background: url(../images/login-left.png) no-repeat 0 0;
+			padding: 0 0 0 17px;
+			float: left;
+			margin: 13px 8px 0 2px;
+		}
+		.LoginButtonRight {
+			background: url(../images/login-right.png) no-repeat right 0;				
+			padding: 7px 0 10px 0px;
+		}
+		.LoginButton
+		{
+			margin-left: -16px !important;	
+			font-size: 1.5em !important;
+			height: 18px !important;
+			padding: 0 19px !important;
+		}
+		.LogoutButtonLeft {
+			background: url(../images/logout-left.png) no-repeat 0 0;
+			padding: 0 0 0 15px;
+			float: left;
+			margin: 142px 0 0 21px;	
+		}
+		.LogoutButtonRight {
+			background: url(../images/logout-right.png) no-repeat right 0;				
+			padding: 7px 0 10px 0px;
+		}
+		.LogoutButton
+		{
+			margin-left: -16px !important;	
+			font-size: 1.5em !important;
+			height: 22px !important;
+			padding: 0 19px !important;
+		}
+			/*-------New - 20/04----------------*/
+			.SavePass
+			{			
+				display: block;
+				margin-top: 15px;
+				margin-left: 3px;
+				width: 190px;	
+			}
+			.SavePass a
+			{				
+				color: #666666;
+				font-family: Arial;
+				font-size: 1.1em;
+			}
+			.SavePass a:hover
+			{
+				text-decoration: none;
+			}
+			.CheckButton
+			{
+				width: 13px;
+				height: 13px;				
+				margin-left: 4px;	
+				cursor: pointer;
+			}
+			
+            /*----------End Login----------------------------------*/
+          .ContentHome
+          {
+          		width: 1032px;
+          		margin: 0 auto;
+          		position: relative;  
+          		z-index: 0;
+          		top: -505px;   
+          		margin-bottom: 61px;  
+          }
+         .ContentHomeTop
+          {
+          	width: 1032px;
+          	height: 41px;          	      	
+          	background: url(../images/content-top.png) no-repeat 0 0;          	          	
+          }
+          .ContentHomeMain
+          {
+          	padding: 25px 0px 12px 0;  
+          }
+          .ContentImg
+          {
+          	float: left;          	
+          	width: 76px;
+          	height: 102px;          	
+          	margin-left: 1px;          	
+          	margin-right: 27px;
+          	margin-top: -20px;
+          }          
+         .ContentText
+          {
+          	float: left;          	
+          	width: 76px;
+          	margin-top: -28px;
+			min-height:300px;
+          }
+          .Title
+          {          	          	
+          	margin-top: -28px;
+          }
+          .TitleH2
+          {
+          	font-size: 4em;          	         	
+          	font-family: "DaxCondensedRegular";
+          }
+		#popupContainer h2
+		{
+			font-weight: normal;
+		}
+           .Sumary
+          {          
+          	line-height: 18px;
+          	margin-top: 16px;
+          	margin-bottom: 27px;
+          	margin-left: 2px;
+          	width: 423px;
+          }
+          .FontSumary
+          {
+          	font-size: 1.5em;	
+          }
+           .FontH3Home 
+          {
+          	font-size: 1.5em;	
+          	text-decoration: none;   
+          	font-weight: bold;
+          }
+           .FontH3Home a:hover
+          {          	
+          	text-decoration: none;   
+          }
+          
+         .NextButton a
+         {         	
+          	text-decoration: none;
+         }
+        
+          .ContentBox1
+          {
+            width: 331px;          	
+          	float: left;  
+          	        	
+          }
+          .Box1Img
+          {
+            margin:38px 7px 0 21px;          	
+          	width: 62px;
+          	height: 59px;
+          	float: left;
+          }
+           .Box1Text
+          {
+          	float: left;
+          	width: 241px;            	   		
+          }     
+           .BoxTitle
+          {
+             margin-top: 41px;
+          	font-size: 3em;
+          	padding-bottom: 9px;
+          	line-height: 36px;
+          	color: #00447F;
+          }
+          .BoxText
+          {
+          	font-size: 1.5em;
+          	padding-bottom: 22px;
+          	width: 176px;
+          	line-height: 18px;
+          }
+           .BoxSearch
+          {
+          	width: 202px;
+          	height: 32px;
+          	background-image: url(../images/search-home.png);
+          	background-repeat: no-repeat;  
+          	padding:1px 0px;
+          	margin-bottom: 13px;
+          	margin-left: -3px;
+          }
+           .BoxSearch .Input
+          {
+          	width: 146px;
+          	height: 28px;
+          	font-size: 1.4em;
+          	border: medium none;   
+          	line-height: 15px;
+          	padding: 2px 10px 0 11px;
+          	margin-left: 2px;   
+          	vertical-align:top;
+          	float: left; 
+          	background: none;
+          	outline: none;
+           }
+           .BoxSearch .Submit
+          {
+              width:30px;
+              height:30px;
+              background: url(../images/button-search.png) no-repeat 0 0;
+              border: medium none;   
+              float: right;
+              cursor: pointer;
+              vertical-align:top; 
+          }
+           .ContentBox2
+          {            
+          	width: 317px;
+          	float: left;
+          }
+           .Box2Img
+          {
+            margin:27px 8px 0 12px;          	
+          	width: 61px;
+          	height: 71px;
+          	float: left;
+          }
+           .Box2Text
+          {
+          	float: left;
+          	width: 236px;  
+          }   
+          .Box2Title
+          {
+             margin-top: 41px;
+          	font-size: 3em;
+          	padding-bottom: 9px;
+          	line-height: 36px;
+          	
+          }
+          .BoxText2
+          {
+          	font-size: 1.5em;
+          	padding-bottom: 22px;
+          	width: 177px;
+          	line-height: 18px;
+          	margin-left: 5px;
+          }
+           .BoxSearch2
+          {
+          	width: 202px;
+          	height: 32px;
+          	background-image: url(../images/search-home.png);
+          	background-repeat: no-repeat;  
+          	padding:1px 0px;
+          	margin-bottom: 13px;
+          	margin-left: 2px;
+          }
+          .BoxSearch2 .Submit1
+          {
+              width:30px;
+              height:30px;
+              background: url(../images/button-search.png) no-repeat 0 -30px;
+              border: medium none;   
+              float: right;
+              cursor: pointer;
+              vertical-align:top; 
+          }  
+          .BoxSearch2 .Input
+          {
+          	width: 147px;
+          	height: 28px;
+          	font-size: 1.4em;
+          	border: medium none;   
+          	line-height: 15px;
+          	padding: 1px 10px 0 10px;
+          	margin-left: 2px;
+          	float: left;
+          	background: none;
+            vertical-align:top; 
+            outline: none;
+           }
+          .Color
+          {
+             color: #68a3b5;  
+          }
+           .ContentBox3
+          {                        
+          	width: 312px;
+          	float: left;          	
+          }
+           .Box3Img
+          {
+            margin: 27px 14px 0 7px;          	
+          	width: 59px;
+          	height: 73px;
+          	float: left;
+          }
+            .Box3Text
+          {
+          	float: left;
+          	width: 206px;                         	
+          }   
+           .BoxText3
+          {
+          	font-size: 1.5em;
+          	padding-bottom: 9px;
+          	width: 179px;
+          	line-height: 18px;
+          	margin-left: 5px;
+          }
+           .BoxSearch3
+          {
+          	width: 202px;
+          	height: 32px;
+          	background-image: url(../images/search-home.png);          	
+          	background-repeat: no-repeat;  
+          	padding:1px 0px;
+          	margin-bottom: 13px;
+          	margin-left: 2px;
+          	margin-top: 13px;
+          }
+           .BoxSearch3 .Input
+          {
+          	width: 147px;
+          	height: 28px;
+          	font-size: 1.4em;
+          	border: medium none;   
+          	line-height: 15px;
+          	padding: 1px 10px 0 10px;
+          	margin-left: 2px; 
+          	float: left; 
+          	background: none;     
+          	outline: none;       		  
+           }
+          .BoxSearch3 .Submit2
+          {
+              width:30px;
+              height:30px;              
+              background: url(../images/button-search.png) no-repeat 0px -60px;
+              border: medium none;   
+              cursor: pointer;
+              vertical-align:top; 
+              float: right;
+          }  
+          .Color2
+          {
+             color: #a3cfe9;  
+          }
+          
+	/*-------end home------------------------*/
+
+    /* #languageSelection */
+        #languageSelection {
+            width: 99px;
+            height: 30px;
+            float: right;
+            margin: 11px 0 0;            
+        }      
+        
+            #languageSelection li {
+                float: left;     
+                font-size: 12px;
+                font-family: "DaxCondensedRegular";
+                text-transform: uppercase;
+                line-height: 32px;
+                padding: 0 7px 0 7px;                    
+            }
+           
+                .ResidenceTheme #languageSelection li a {
+                    height: 19px;
+                    padding: 5px 0 0 0;
+                    width: 30px;
+                   
+                }
+                #languageSelection li.Active {               
+                    cursor: pointer;
+                    color: #fff;                    
+                    padding: 0 10px 0 9px;
+                    height: 30px;   
+                    text-align: center;                       
+                    position:relative;
+                    z-index:9999;                
+                    -webkit-border-radius: 45px;
+                    -moz-border-radius: 45px;
+                    border-radius: 45px;
+                    behavior: url(js/PIE.htc);               
+                }
+               
+                #languageSelection li a:focus,
+                #languageSelection li a:hover {
+                    color: #fff;
+                    text-decoration: underline;                   
+                }
+                .AboutPage
+                {
+                    width: 98px;                    
+                    padding:8px 0px;     
+                    -webkit-border-radius: 30px;
+                    -moz-border-radius: 30px;
+                    border-radius: 30px;
+                    behavior: url(js/PIE.htc);  
+                    text-align: center;
+                   position: relative;
+                   z-index: 2;
+                }
+    /* END. #languageSelection */
+
+    .LogOutBtn { 
+        margin: 10px 0 0;
+        font-weight: bolder;
+    }
+    .LogOutBtn:hover {
+        text-decoration: none;
+    }
+
+    .BlockBanner01 {
+        clear: both;
+        padding: 54px 0 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .BackBtnTop {
+        float: left;
+        display: block;
+        background: url(../images/back-btn-03-left.png) no-repeat 0 0;
+        padding: 0 0 0 39px;
+        position: absolute;
+        top: 9px;
+        left: 0;
+        z-index: 1;
+    }
+        .BackBtnTop span {
+            float: left;
+            display: block;
+            background: url(../images/back-btn-03-right.png) no-repeat right 0;
+            padding: 7px 15px 6px 0;
+            font-size: 14px;
+            font-family: "DaxCondensedMedium";
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .BackBtnTop:hover,
+        .BackBtnTop:hover span {
+            text-decoration: none;
+            color: #f4f4f4;
+        }
+/* END. Header */
+
+/* Content */
+	#content {
+        width: 100%;
+        overflow: hidden;
+		background: url(../images/content-bg-top.png) no-repeat center top;
+		padding: 60px 0 30px ;
+	}
+	.BlueThemeHome #content {
+		margin: 20px 0 0;
+	}
+	.ResidenceTheme #content {
+		background: url(../images/content-bg-top-2.png) no-repeat center top;
+		padding: 49px 0 0;
+	}
+	#innerContent01 {
+        width: 100%;
+        overflow: hidden;
+		background: url(../images/content-bg-bottom.png) no-repeat center bottom;
+		padding: 0 0 58px;
+	}
+    .ResidenceTheme #innerContent01 {
+		background: url(../images/content-bg-bottom-3.png) no-repeat center bottom;
+        overflow: visible;
+    }
+	#innerContent02 {
+		background: url(../images/content-bg-loop.png) repeat-y center center;
+	}
+	.ResidenceTheme #innerContent02 {
+		background: url(../images/content-bg-loop-2.png) repeat-y center center;
+        overflow: hidden;
+	}
+    #mainContent {
+        width: 933px;
+        padding: 0 0 0 29px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    /* Fix for Chrome & Safari only */
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+        #mainContent { right: -1px; }
+		.SavePass{ margin-top: 25px;}		
+    }
+    /* END. Fix for Chrome & Safari only */
+
+    /* Fix for IE7 only */
+    html>body #mainContent { *right: -1px; }    
+    /* END. Fix for IE7 only */
+   
+   /* Fix for IE9 only */  
+	 :root .TextInput { padding-bottom: 2px \0/IE9;}	  
+	
+	/* Fix for IE9 only */
+    .ResidenceTheme #mainContent {
+        width: 960px;
+        padding: 0;
+    }
+	/*-----Change-----------*/
+    .PageHeading { /* Heading 2 */
+        font-size: 40px;
+        font-family: "DaxCondensedMedium";
+        font-weight: normal;        
+    }
+	/*-----Change-----------*/
+    #sideBlock {
+        width: 290px;
+        overflow: hidden;
+		background: url(../images/sidebar-bg.png) no-repeat 0 0;
+        float: left;
+    }
+    #sideNav {
+        width: 100%;
+        overflow: hidden;
+    }
+        #sideNav li {
+            width: 100%;
+            float: left;
+            background: url(../images/sidebar-separator.png) no-repeat 0 bottom;
+        }
+            #sideNav li span {
+                width: 100%;
+                display: block;
+                float: left;
+            }
+            #sideNav li.Active span {
+                background: url(../images/sidebar-active-bg.png) no-repeat right center;
+            }
+            #sideNav li a {
+                display: block;
+                width: 165px;
+                padding: 48px 0 28px 105px;
+                overflow: hidden;
+                float: left;
+                font-size: 20px;
+                font-family: "DaxCondensedRegular";
+                color: #333333;
+            }
+            #sideNav li.FirstItem a {
+                padding: 35px 0 28px 105px;
+            }
+            #sideNav li.Active a,
+            #sideNav li.Active a:hover {
+                font-weight: bolder;
+                text-decoration: none;
+            }
+            .SideNavItem01 a {
+                background: url(../images/sidebar-icon-01.png) no-repeat 38px 14px;
+            }
+            .SideNavItem02 a {
+                background: url(../images/sidebar-icon-02.png) no-repeat 30px 24px;
+            }
+            .SideNavItem03 a {
+                background: url(../images/sidebar-icon-03.png) no-repeat 30px 19px;
+            }
+            .SideNavItem04 a {
+                background: url(../images/sidebar-icon-04.png) no-repeat 33px 32px;
+            }
+                #sideNav li ul {
+                    width: 100%;
+                    overflow: hidden;
+                    padding: 0 0 16px 0;
+                    display: none;
+                }
+                #sideNav li.Active ul {
+                    display: block;
+                }
+                    #sideNav li ul li {
+                        width: 100%;
+                        float: left;
+                        padding: 0 0 4px 93px;
+                        background: none;
+                    }
+                        #sideNav li ul a,
+                        #sideNav li.FirstItem ul a,
+                        #sideNav li.Active ul a {
+                            display: inline;
+                            width: auto;
+                            padding: 0 0 0 8px;
+                            float: none;
+                            font-size: 14px;
+                            font-family: "Trebuchet MS";
+                            font-weight: normal;
+                            color: #757675;
+                            background: url(../images/bullet-02.png) no-repeat 0 7px;
+                        }
+                        #sideNav li ul li.Active a,
+                        #sideNav li ul li.Active a:hover {
+                            font-weight: bolder;
+                            color: #575757;
+                        }
+
+    #mainBlock {
+        float: left;
+        width: 630px;
+        padding: 0 30px 0 10px;
+    }
+/* END. Content */
+
+/* Footer */
+    #Footer {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        
+    }
+    .FooterMargin
+    {
+    	margin-top: -174px;
+    }
+    .BlueTheme #Footer {
+        background: url(../images/footer-bg-blue.jpg) no-repeat center top;
+    }
+    .ResidenceTheme #Footer {
+        background: url(../images/footer-bg-black.jpg) no-repeat center top;
+    }
+        #FooterContent {
+            width: 960px;
+            height: 155px;
+            padding: 43px 0 0;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+            .FooterBlock01 {
+                width: 400px;
+                padding: 0 0 0 22px;
+                float: left;                              
+            }
+                .FooterHeading {
+                    font-size: 20px;
+                    font-family: "DaxCondensedBold";
+                    color: #fff;
+                    font-weight: normal;
+                }
+                .FooterBlock01 p {
+                    color: #a0b8c7;
+                    font-size: 1.4em;
+                    line-height: 17px;
+                    padding: 12px 0;
+                }
+                .ResidenceTheme .FooterBlock01 p {
+                    color: #abacae;
+                }
+                .FooterBlock01 a {
+                    color: #fff;
+                    font-size: 14px;
+                }
+                .FooterBlock01 a:hover {
+                    color: #dfdfdf;
+                    text-decoration: none;
+                }
+            .FooterBlock02 {                
+                float: right;
+                width: 512px;
+                margin-top: 5px;
+                margin-right: 21px;
+                
+                text-align: right;
+            }
+                .CopyrightText {
+                    font-size: 16px;
+                    font-family: "DaxCondensedMedium";
+                    color: #fff;
+                }
+                .CopyrightText a {
+                    font-size: 16px;
+                    font-family: "DaxCondensedMedium";
+                    color: #fff;
+                }
+                .CopyrightText a:hover {
+                    color: #dfdfdf;
+                    text-decoration: none;
+                }
+/* END. Footer */
+
+/* Content styles: p, a, list, blockquote in #content */
+    
+    .HrReplacement {
+        height: 14px;
+        clear: both;
+        padding: 0;
+        margin: 0;
+    }
+    .HrStyle01 {
+        background: url(../images/hr-bg.png) no-repeat 0 0;
+    }
+    .HrStyle02 {
+        background: url(../images/hr-bg-2.png) no-repeat 0 0;
+    }
+    .HrStyle03 {
+        background: url(../images/hr-bg-3.png) no-repeat 0 0;
+    }
+    .HrStyle04 {
+        background: url(../images/hr-bg-4.png) no-repeat 0 0;
+    }
+    .CommonParagraph {
+        font-size: 1.5em;
+        margin: 0px 0 21px 1px;
+        line-height: 10px;
+        padding: 0 48px 0 0;
+    }
+    .CommonParagraph1 {
+        font-size: 1.5em;        
+        line-height: 21px;
+        padding-right: 10px;
+        
+    }
+        .CommonParagraph a {
+            font-size: 15px;
+        }
+        .CommonParagraph a:hover {
+        }
+    .CommonParagraphAlt01 {
+        padding: 0;
+        margin: 0;
+    }
+        .CommonParagraphAlt01 a {
+            font-weight: bolder;
+        }
+    .ClearSpacing {
+        margin: 0;
+    }
+    .CommonList {
+        width: 100%;
+        overflow: hidden;
+        margin: 26px 0 22px;
+    }
+        .CommonList li {
+            font-size: 15px;
+            padding: 0px 0 0 28px;
+            background: url(../images/bullet-04.png) no-repeat 11px 10px;
+            line-height: 20px;
+        }
+/* END. Content styles: p, a, list, blockquote in #content */
+
+/* Form */
+    .FormItem {
+        width: 100%;
+        overflow: hidden;
+        padding: 20px 0 13px;
+    }
+        .FormItem label {
+            font-size: 1.4em;            
+            float: left;
+            margin: 3px 32px 0 4px;
+            white-space: nowrap;
+        }
+        .RequiredIndicator {
+            color: #cc0000;
+        }
+        .TextInputWrapper01 {
+            background: url(../images/text-input-right.png) no-repeat right 0;
+            padding: 0 3px 0 0;
+            float: left;
+        }
+        .TextInputWrapper01Error {
+        	background: url(../images/text-input-right-error.jpg) no-repeat right 0;         
+            padding: 0 1px 0 0;
+            float: left;
+            display: block;
+        }
+        .TextInputWrapper02 {
+            background: url(../images/text-input-left.png) no-repeat 0 0;
+            padding: 0 0 0 3px;
+        }
+        
+        .TextInputSize01 {
+            width: 300px;
+            
+        }
+        .TextInput {
+            width: 287px;
+            padding: 5px 0 0 4px;
+            font-size: 1.4em;            
+            border: none;
+            background: none;   
+            outline: none;         
+        }
+        .FakePwdText {
+            padding: 0;
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            top: 7px;
+            left: 13px;
+            z-index: 0;
+        }
+        .FormItem select {
+            float: left;
+        }
+    .FormNote {
+        font-size: 1.2em;        
+    }
+
+    .ButtonGroup {
+        width: 100%;
+        overflow: hidden;
+    }
+    .FormButtonWrapper01 {
+        background: url(../images/common-btn-02-left.png) no-repeat 0 0;
+        padding: 0 0 0 15px;
+        float: left;
+        margin: 0 8px 0 2px;
+    }
+    .FormButtonWrapper02 {
+        background: url(../images/common-btn-02-right.png) no-repeat right 0;
+    }
+    .FormButtonWrapper03 {
+        background: url(../images/common-btn-03-left.png) no-repeat 0 0;
+        padding: 0 0 0 12px;
+        float: left;
+        margin: 0 8px 0 0;
+    }
+    .FormButtonWrapper04 {
+        background: url(../images/common-btn-03-right.png) no-repeat right 0;
+    }
+    .CommonFormBtn {
+        color: #fff;
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        font-size: 1.6em;
+        font-family: "DaxCondensedBold";
+        font-weight: normal;
+        height: 38px;
+        cursor: pointer;
+        margin: -3px 0 0 -15px;
+        padding: 0 15px;
+		overflow: visible;
+    }
+        .FormButtonWrapper03 .CommonFormBtn {
+            height: 36px;
+            padding: 0 15px;
+        }
+/* END. Form */
+
+/* Table */
+    .CommonTableWrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+    .CommonTable {
+        width: 100%;
+    }
+        .CommonTable th,
+        .CommonTable td {
+            border-collapse: collapse;
+            border: none;
+            font-size: 14px;
+            padding: 7px 11px;
+        }
+        .CommonTable th {
+            background: #67a3b4;
+            color: #fff;
+            text-align: left;
+        }
+        .CommonTable td {
+            color: #333333;
+        }
+        .CommonTable td a {
+            color: #333333;
+        }
+        .CommonTable tr:hover td,
+        .CommonTable .SelectedRow td {
+            background: #edef7f;
+        }
+        .RightCol {
+            text-align: right !important;
+        }
+/* END. Table */
+
+/* Tooltip */
+    .TooltipBox01 {
+        background: url(../images/tooltip-01-bottom.png) no-repeat 0 bottom;
+        padding: 0 0 35px;
+        width: 326px;
+        position: absolute;
+        z-index: 9999;
+    }
+        .TooltipBox01Inside {
+            width: 100%;
+            overflow: hidden;
+            background: url(../images/tooltip-01-top.png) no-repeat 0 0;
+            padding: 22px 0;
+        }
+            .TextBlockRow {
+                font-size: 13px;
+                color: #333333;
+                border-top: 1px solid #e5ea80;
+                width: 320px;
+                overflow: hidden;
+                margin: 0 0 0 1px;
+                padding: 6px 0 7px;
+            }
+            .FirstTextBlockRow {
+                border-top: none;
+            }
+                .TextBlockRow span {
+                    display: block;
+                    font-size: 13px;
+                    color: #333333;
+                    float: left;
+                }
+                .TextBlockRowLabel {
+                    width: 75px;
+                    padding: 0 0 0 25px;
+                }
+                .TextBlockRowContent {
+                    color: #000;
+                    font-weight: bolder;
+                }
+/* END. Tooltip */
+
+/* Page: About us */
+    .AboutIntroParagraph {
+        font-size: 2em;
+        margin: -3px 0 25px 1px;
+    }
+
+    .BlockAboutContent01 {
+        float: left;
+        width: 552px;
+        margin: 25px 0 0;
+    }
+    .BlockAboutContent02 {
+        float: right;
+        width: 378px;
+    }
+    .ImgAboutus
+    {
+    	margin: 22px 0 0 -4px;
+    	
+    }
+    
+    .BlockAboutContent03 {
+        width: 910px;
+        height: 584px;
+        padding: 28px 0 35px;
+        margin: 2px 0px -9px -3px;
+        background: url(../images/about-block-bg.jpg) no-repeat 0 28px;
+        position: relative;
+    }
+        .AboutTopNodeContent { /* h3 */
+            font-family: "DaxCondensedRegular";
+            font-weight: normal;
+            width: 122px;
+            padding: 0 20px;
+            height: 69px;
+            text-align: center;
+            position: absolute;
+            top: 70px;
+            left: 369px;
+            font-size: 18px;
+            color: #fff;
+            line-height: 22px;
+        }
+        .AboutNodeContent01,
+        .AboutNodeContent02 {
+            width: 290px;
+            height: 273px;
+            position: absolute;
+            top: 273px;            
+        }
+        .AboutNodeContent01 {
+            left: 0;
+        }
+        .AboutNodeContent02 {
+            left: 310px;
+        }
+        .AboutNodeContent03 {
+            width: 290px;
+            height: 133px;
+            position: absolute;
+            top: 270px;
+            right: 0;
+        }
+        .H20
+        {
+        	padding-bottom: 20px;
+        }
+        
+        .Margin
+        {
+        	margin: -5px 0px 7px 4px;
+        }
+        .NodeTitle { /* h4 */
+            font-family: "DaxCondensedBold";
+            font-size: 18px;
+            padding: 0 10px 0 21px;
+        }
+        .PaddingTitle1 { /* h4 */           
+            padding: 0 10px 0 18px;
+        }
+        .PaddingTitle2 { /* h4 */
+            padding: 0 10px 0 21px;
+        }
+        .PaddingTitle3 { /* h4 */
+            
+            padding: 0 10px 0 19px;
+        }
+        .ListStyle01, .ListStyle02, .ListStyle03 {
+            width: 100%;
+            overflow: hidden;
+            padding: 8px 0 0 0px;
+        }
+            .ListStyle01 li {
+                font-size: 13px;
+                padding: 2px 18px 0px;
+                background: url(../images/bullet-01.png) no-repeat 12px 8px;
+                line-height: 18px;
+            }
+            .ListStyle02 li {
+                font-size: 13px;
+                padding: 0 10px 1px 19px;
+                background: url(../images/bullet-01.png) no-repeat 12px 8px;
+                line-height: 18px;
+            }
+            .ListStyle03 li {
+                font-size: 13px;
+                padding: 2px 10px 0px 22px;
+                background: url(../images/bullet-01.png) no-repeat 12px 8px;
+                line-height: 17px;
+            }
+/* END. Page: About us */
+
+/* Page: News */
+    .BlockPageNavigationAlt04 {
+        width: auto;
+    }
+    .BlockArticle {
+        width: 100%;
+        overflow: hidden;
+        padding: 30px 0 21px;
+    }
+    .BlockSideContent {
+        width: 145px;
+        float: left;
+    }
+    .BlockMainArticle {
+        width: 758px;
+        padding: 0 30px 0 0;
+        float: left;
+    }
+
+    .ArticleDate {
+        font-size: 15px;
+    }
+    .ArticleTitle {
+        font-size: 15px;        
+    }
+    .MarginButtonNews
+    {
+    	margin: 4px 0 11px 0;
+    	
+    }
+    .MarginNews
+    {
+    	margin: 7px 0 0 0;
+    }
+/* END. Page: News */
+
+/* Page: Home */
+    #homeVideo {
+        width: 100%;
+        clear: both;
+        padding: 25px 0 0;
+    }
+    .BlockBrieftArticle {
+        width: auto;
+        padding: 0 300px 0 106px;
+        background: url(../images/home-icon-01.png) no-repeat 3px 0;
+    }
+        .BlockBrieftArticle .PageHeading {
+            margin: 0 0 10px -2px;
+        }
+        .BlockBrieftArticle .BlockArticle {
+            padding: 10px 0 0;
+        }
+
+    .BlockFunction {
+        width: 960px;
+        background: url(../images/column-balance-01.png) repeat-y 0 0;
+        margin: 0 0 0 -28px;
+    }
+    .BlockFunctionColumnBalance {
+        background: url(../images/home-seperate-bg.png) no-repeat 0 0;
+        width: 100%;
+        overflow: hidden;
+        
+    }
+   
+    .Homepage
+        {
+        	/*position: relative;*/
+        	margin-top:241px;
+        	margin-bottom: 175px;
+        }
+    .Homepage #innerContent01 {
+		background: url(../images/content-bg-bottom-2.png) no-repeat center bottom;
+		padding: 0 0 58px;
+		
+    }
+    .SubPageHeading03 {
+        font-size: 30px;
+        font-family: "DaxCondensedBold";
+        margin: 0 0 10px;
+    }
+
+    .InputSearchSize01 {
+        width: 202px;
+    }
+    .InputSearchWrapper01 {
+        background: url(../images/search-box-left.png) no-repeat 0 0;
+        float: left;
+    }
+    .InputSearchWrapper02 {
+        background: url(../images/search-box-right.png) no-repeat right 0;
+        padding: 0 34px 0 3px;
+    }
+    .InputSearchWrapper03 
+    {
+    }
+     
+    .InputSearchWrapperAlt01 {
+        background: url(../images/search-box-right.png) no-repeat right -32px;
+    }
+    .FormItemSpacing02 {
+        margin: 0 ;
+        padding: 3px 0 0;
+    }
+/* END. Page: Home */
+
+/* Page: Forgot pass */
+    .HrSpacing01 {
+        margin: 16px 0 0;
+    }
+    .FormItemSpacing01 {
+        margin: 0 0 0 40px;
+    }
+    .ButtonGroupSpacing01 {
+        width: 773px;
+        padding: 20px 0 0 160px;
+    }
+    .FormNoteSpacing01 {
+        padding: 31px 0 228px 163px;
+    }
+/* END. Page: Forgot pass */
+
+/* Page: Residence Search */
+    .SearchBox01 {
+        width: 515px;
+        margin: 0 auto;
+        padding: 0 0 25px;
+    }
+    
+    .MapContainer {
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+        padding: 0 0 15px;
+    }
+/* END. Page: Residence Search */
+
+/* Page: Transaction Search */
+  
+    .ResultsList {
+        width: 840px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+.BlockSearchItemInfo01 {
+    padding: 8px 0 0 0;
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    /*color: #333333;*/
+    line-height: 16px;
+}
+    .BlockSearchItemInfo01 span {
+        font-size: 12px;
+        color: #999999;
+        line-height: 15px;
+    }
+    .BlockSearchItemInfo01 strong {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .BlockSearchItemInfo01 sup {
+        font-size: 9px;
+    }
+/* END. Page: Transaction Search */
+
+/* Page: Residence 1 */
+    .MapContainerAlt01 {
+        height: 360px;
+        padding: 0;
+        margin: 0;
+    }
+    .AddressBox {
+        width: 100%;
+        overflow: hidden;
+        padding: 10px 0 0 0;
+    }
+        .BlockAddressBox01 {
+            width: 50%;
+            float: left;
+        }
+        .LocationLogo {
+            display: block;
+            float: right;
+        }
+        .AddressBox p,
+        .AddressBox a {
+            font-size: 14px;
+            color: #333333;
+        }
+        .AddressBox a {
+            font-size: 14px;
+            color: #fd513b;
+            text-decoration: underline;
+        }
+        .AddressBoxAlt01 a {
+            color: #acb700;
+        }
+        .AddressBox a:hover {
+            color: #333333;
+        }
+        .LocationText {
+            padding: 0 0 15px 33px;
+        }
+        .LocationText strong {
+            font-size: 18px;
+            font-weight: bolder;
+            color: #fd513b;
+        }
+        .AddressBoxAlt01 .LocationText strong {
+            color: #004480;
+        }
+        .LocationText em {
+            font-weight: bolder;
+            font-style: normal;
+        }
+        .ContactInfo {
+            background: url(../images/contact-icon-group.png) no-repeat 0 0;
+            padding: 0 0 3px 33px;
+        }
+        .AddressBoxAlt01 .ContactInfo {
+            background-image: url(../images/contact-icon-group-2.png);
+        }
+        .ContactIcon01 {
+            background-position: 7px 0;
+        }
+        .ContactIcon02 {
+            background-position: 7px -20px;
+        }
+        .ContactIcon03 {
+            background-position: 7px -44px;
+        }
+/* END. Page: Transaction Search */
+
+/* Page: Residence Accueil */
+    .LoginBoxPosition01 {
+        top: 6px !important;
+        height: 290px !important;
+		background: url(../images/login-box-2.png) no-repeat 0 0 !important;
+    }
+        .LoginBoxPosition01 h3 {
+            font-size: 30px !important;
+            text-align: left !important;
+            padding: 8px 0 35px 22px !important;
+        }
+
+    .PageWelcomeText01 {
+        font-size: 30px;
+        font-family: "DaxCondensedRegular";
+        color: #8f9498;
+        padding: 48px 0 22px;
+    }
+        .PageWelcomeText01 strong {
+            font-family: "DaxCondensedMedium";
+        }
+    .BlockBrieftArticleAlt01 {
+        width: auto;
+        padding: 0 260px 72px 14px;
+        background: none;
+    }
+        .BlockBrieftArticleAlt01 .BlockArticle {
+            padding: 6px 0 0;
+        }
+
+    .ResultsSetAlt01 {
+        padding: 0 0 0 14px;
+    }
+    .ResultsListAlt01 {
+        width: 630px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+        .ResultsListAlt01 li {
+            margin: 20px 30px 0 0;
+        }
+
+    .SubPageHeading03Alt01 {
+        font-size: 17px;
+        font-family: "DaxCondensedRegular";
+        font-weight: normal;
+        color: #666666;
+        text-transform: uppercase;
+        padding: 7px 0 0;
+    }
+
+    .FormItemAlt01 {
+        padding: 0 0 8px 19px;
+    }
+    .TextInputStyle01 {
+        background: url(../images/text-input-style-01.png) no-repeat 0 0;
+        width: 202px;
+        height: 32px;
+        position: relative;
+        z-index: 1;
+    }
+        .TextInputStyle01 .TextInput {
+            width: 190px;
+            padding: 7px 0 7px 12px;
+            font-size: 14px;
+            color: #666666;
+            outline: none;
+        }
+        /* Fix for IE 7 only */
+        html>body .TextInputStyle01 .TextInput {
+            *padding: 7px 0 7px 15px;
+        }
+        /* END. Fix for IE 7 only */
+
+    .ForgotPassLnk:link,
+    .ForgotPassLnk:visited {
+        font-size: 11px;
+        font-family: Arial;
+        color: #fff;
+        margin: 24px 0 27px 28px;
+        float: left;
+        text-decoration: underline;
+    }
+    .ForgotPassLnk:hover {
+        color: #f4f4f4;
+    }
+
+    .FormButtonWrapper01Alt01 {
+        clear: both;
+        margin: 0 0 0 27px;
+        float: left;
+    }
+
+    .FormItemAlt05 {
+        margin: 0;
+        padding: 0;
+    }
+        .FormItemAlt05 .RememberSelection {
+            width: auto;
+            float: right;
+            padding: 0 ;
+            margin: 10px 22px 0 0;
+            display: inline;
+            font-size: 11px;
+            font-family: Arial;
+            color: #666666;
+        }
+
+/* END. Page: Residence Accueil */
+
+/* Page: Residence Adressbook */
+    .PageHeadingAlt01 {
+        margin: 6px 0 19px 4px;
+    }
+    .SubPageHeading03Alt02 {
+        font-size: 18px;
+        font-family: "Trebuchet MS";
+        color: #00447f;
+        padding: 29px 0 10px 12px;
+    }
+    .SearchBoxAlt01 {
+        width: 100%;
+        padding: 15px 0;
+    }
+    .FormItemAlt02 {
+        padding: 5px 0;
+    }
+        .FormItemAlt02 label {
+            width: 77px;
+            text-align: left;
+            padding: 0;
+            margin: 6px 0 0;
+        }
+
+    .FormButtonWrapper01Alt02 {
+        margin: 20px 0 0 77px;
+    }
+/* END. Page: Residence Adressbook */
+
+/* Page: Residence Calendrier */
+    .BlockPageNavigationAlt01 {
+        width: 640px;
+        margin: 20px 0 0;
+        padding: 0 27px 10px 0;
+    }
+
+    .YearNavigationBlock {
+        width: 186px;
+        height: 20px;
+        margin: 0 auto;
+    }
+    .YearText {
+        font-size: 18px;
+        color: #b2c014;
+        float: left;
+        text-align: center;
+        width: 146px;
+    }
+    .YearNavigationBtn {
+        display: block;
+        width: 20px;
+        height: 0;
+        padding: 20px 0 0;
+        overflow: hidden;
+        text-indent: -1000em;
+        float: left;
+        background: url(../images/arrow-group-01.png) no-repeat 0 0;
+    }
+    .YearNavigationBtnDisable {}
+    .NextYearBtn:hover {}
+    .PrevYearBtn {
+        background-position: 0 0;
+    }
+    .NextYearBtn {
+        background-position: -166px 0;
+    }
+
+    .CalendarUI {
+        width: 630px;
+    }
+    .CalendarUI,
+    .CalendarUI th,
+    .CalendarUI td {
+        border-collapse: collapse;
+    }
+        .CalendarUI th,
+        .CalendarUI td {
+            font-size: 12px;
+            color: #333333;
+        }
+        .CalendarUI th {
+            padding: 11px 0;
+        }
+        .CalendarUI td {
+            width: 79px;
+            height: 83px;
+            padding: 3px 5px;
+            text-align: right;
+            vertical-align: top;
+            border: 1px solid #cccccc;
+        }
+        .CalendarUI td:hover {
+            background: #e0eefa;
+        }
+        .CalendarUI td.Today {
+            background: #f5facc;
+            font-weight: bolder;
+        }
+        .CalendarUI td.OtherMonthDay {
+            color: #ccc;
+        }
+            .CalendarUI td p {
+                text-align: left;
+                font-size: 11px;
+                padding: 0 0 5px;
+            }
+                .CalendarUI td p a {
+                    color: #333;
+                    font-size: 11px;
+                    padding: 0 0 0 15px;
+                    background: url(../images/bullet-03.png) no-repeat 0 2px;
+                }
+                    .CalendarUI td p a span {
+                        font-size: 12px;
+                    }
+/* END. Page: Residence Calendrier */
+
+/* Page: Residence Chat */
+    .ChatContainer {
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        margin: 50px 0 0;
+    }
+/* END. Page: Residence Chat */
+
+/* Page: Residence Transsearch 1 */
+    .DownloadBtn {
+        display: block;
+        width: 22px;
+        height: 0;
+        padding: 22px 0 0;
+        overflow: hidden;
+        text-indent: -1000em;
+        background: url(../images/download-icon.png) no-repeat 0 0;
+        float: right;
+    }
+    .DownloadBtn:hover {
+        text-decoration: none;
+    }
+    .FormItemAlt03 {
+        padding: 13px 0 46px;
+    }
+    .BlockPageNavigationAlt02,
+    .BlockPageNavigationMirrorAlt02 {
+        width: 630px;
+    }
+   /* .BlockPageNavigationAlt02 {
+        margin: 15px 0 10px;
+        padding: 0 27px 0 0;
+    }*/
+    .BlockPageNavigationMirrorAlt02 {
+        margin: 10px 0 0;
+        padding: 0 27px 0 0;
+    }
+    .ResultsSetAlt01Spacing01 {
+        padding: 27px 0 39px 14px;
+    }
+/* END. Page: Residence Transsearch 1 */
+
+
+/* Page: Residence Transsearch 2 */
+    .BlockPageNavigationAlt02 {
+        width: 640px;
+        margin: 20px 0 0;
+        padding: 0 27px 0 0;
+    }
+        .BlockPageNavigationAlt02 .BackBtnSmall {
+            left: 18px;
+        }
+    .BlockPageNavigationAlt02Mirror {
+        margin: 0;
+    }
+
+    .BlockShowcase {
+        width: 100%;
+        overflow: hidden;
+        margin: 50px 0 0;
+    }
+    .ShowcaseImg {
+        float: left;
+        display: block;
+        margin: 0 20px 0 0;
+    }
+    .BlockSearchItemInfo01Alt01 {
+        /*float: left;*/
+        width: auto;
+        font-size: 16px;
+        line-height: 18px;
+        padding: 5px 0 0;
+    }
+        .BlockSearchItemInfo01Alt01 strong {
+            font-size: 24px;
+            line-height: 33px;            
+        }
+         /*-----------New - 18/04--------------*/
+        .ShowItem
+        {
+        	display: block;
+        }
+         /*-----------New - 18/04--------------*/
+    .CarouselUIContainer {
+        width: 100%;
+        overflow: hidden;
+        margin: 15px 0 0 -6px;		
+    }
+    .ShareBtn02 {
+        display: block;
+        float: left;
+        width: 350px;
+        padding: 2px 0 0 0;
+        height: 13px;
+        margin: 16px 0 0;
+    }
+   /*-----------New - 18/04--------------*/
+    .ShareFix
+    {
+    	height: 16px! important;
+    	margin: 10px 0 0! important;;
+    }
+    /*-----------New - 18/04--------------*/
+        .ShareBtn02 a {
+            font-size: 10px;
+            font-family: Tahoma;
+            color: #000;
+            text-transform: uppercase;
+            background: url(../images/share-icon.png) no-repeat 0 1px;
+            padding: 0 0 0 17px;
+        }
+        .ShareBtn01 a:hover {}
+    .BlockDetailsInfo {
+        width: 100%;
+        overflow: hidden;
+        margin: 30px 0 40px;
+    }
+        .BlockDetailsInfo p {
+            font-size: 13px;
+            color: #333333;
+            overflow: hidden;
+            width: 100%;
+            padding: 3px 0;
+        }
+            .BlockDetailsInfo p span {
+                width: 140px;
+                float: left;                
+            }
+    .MultiColumn01 {
+        width: 50%;
+        float: left;
+        overflow: hidden;
+    }
+    .MultiColumn01Alt01 {
+        width: 366px;
+    }
+    .MultiColumn01Alt02 {
+        width: 264px;
+    }
+/* END. Page: Residence Transsearch 2 */
+
+/* Page: Update Profile */
+    .ButtonGroupSpacing02 {
+        padding: 20px 0 12px 150px
+    }
+    .FormButtonWrapper01Alt03 {
+        float: left;
+        margin: 0 15px 0 0;
+    }
+    .UpdateProfileFormWrapper {
+        width: 100%;
+        overflow: hidden;
+        margin: 20px 0 0;
+    }
+    .FormItemAlt04 {
+        padding: 0;
+        margin: 0 0 17px;
+    }
+    .FormItemAlt04 label {
+        width: 117px;
+        float: left;
+    }
+    .TextInputSize02 {
+        width: 60px;
+    }
+/* END. Page: Update Profile */
+
+/* Page: Useful Link */
+    .UsefulLnkList {
+        width: 100%;
+        overflow: hidden;
+        margin: 39px 0 31px;
+    }
+        .UsefulLnkList li {
+            width: 100%;
+            overflow: hidden;
+            float: left;
+            margin: 0 0 18px;
+        }
+            .UsefulLnkList li p {
+                font-size: 15px;
+                padding: 12px 0 0;
+            }
+            .UsefulLnkList li p strong {
+                display: block;
+                padding: 0 0 15px;
+            }
+            .UsefulLnkList li p a:hover {
+                text-decoration: none;
+            }
+    .BlockPhoto02 {
+        padding: 6px 7px;
+        float: left;
+        margin: 0 21px 0 0;
+        background: url(../images/photo-block-01.png) no-repeat 0 0;
+    }
+    .BlockPhoto02 img {
+        display: block;
+    }
+/* END. Page: Useful Link */
+
+.NoSpacing {
+    margin: 0;
+    padding: 0;
+}
+
+/*----------Contact-----------------*/
+.BoxContact
+{
+    float: left;
+    margin: 40px 0 40px 0;       
+}
+.BoxMargin1
+{
+    margin-left:61px;
+    width: 195px;
+    margin-top: 31px;
+}
+.FontTitleBox
+{
+    font-size: 2em;
+    margin-bottom: 18px;
+}
+.FontSumBox
+{
+    font-size: 1.5em;
+    line-height: 20px;
+}
+
+.BoxMargin2
+{
+    margin-left:91px;
+    width: 200px;
+    margin-top: 31px;
+}
+.BoxMargin3
+{
+    margin-left:91px;
+    width: 200px;
+    margin-top: 31px;
+}
+.MapContact
+{
+    width: 899px;
+    height: 537px;    
+    padding-bottom: 5px;
+    margin: 24px 0 0 1px;
+}
+/*----------Legal-information-------------------*/
+.H35
+{
+    margin: 29px 0 23px 2px;
+  
+}
+.FontH3
+{
+	font-size: 2em;
+}
+.TextContent
+{
+    margin-top: 18px;
+    margin-left: 2px;
+    font-size: 1.5em;
+    line-height: 20px;
+    padding-bottom: 33px;
+    width: 890px;
+}
+/*----------news-list-------------------*/
+.H29
+{
+    margin-top: 29px;
+    padding-bottom: 32px;
+}
+.SubmitNews
+{
+    padding: 8px 12px; 
+}
+.SubmitNews a
+{
+    text-decoration: none;
+}
+.TitleLeft
+{
+    float: left;
+}
+.SubmitButton
+{
+    float: right;
+    margin-right:28px;
+}
+.NewsList
+{
+    padding-bottom: 32px;    
+}
+.ImgNews
+{
+    float: left;
+    margin-right: 15px;
+    margin-top: 3px;    
+}
+
+.NewsText
+{
+    overflow: hidden;
+    width: 727px;
+    line-height: 21px;		 
+}
+.NewsText a
+{    
+    text-decoration: none;   
+}
+.H5
+{
+    margin: 5px 0 8px 0;
+    font-weight: bold;  
+ 
+}
+.FontNews
+{
+	font-size: 1.5em;	
+}
+
+.NewsText .H5 a
+{
+    text-decoration: none;
+}
+.PaddingNews
+{
+    padding-bottom: 25px;
+}
+/*------Newsletter---------------------------*/
+.TextInputWrapper02Error {
+    background: url(../images/text-input-left-error.jpg) no-repeat 0 0;
+    padding: 0 5px 6px 3px;        
+}
+/*-----------New - 18/04--------------*/
+.NewsLetterError
+{
+    font-size: 1.2em;
+    color: #990000 !important;
+    margin: 5px 0 0 144px; 
+}
+/*-----------New - 18/04--------------*/
+/*------------transsearch-details------------------*/
+.PaddingTransSearch
+{
+	padding-bottom: -10px;
+}
+.BackButton
+{
+    padding-bottom: 29px;
+}
+.NavigationButton {        
+    margin: 30px 0 0;
+    padding: 0 65px 0 0;
+}
+.NavigationButton1 {         
+    padding: 0 65px 28px 0;
+}
+.LineNavigation
+{
+    margin: 7px 0 30px 0;
+}
+.LineNavigation1
+{
+    margin: -4px 0 30px 0;
+}
+.HrStyle05
+{
+    background: url('../images/line-top.jpg') no-repeat 0 0;
+}
+.HrStyle06
+{
+    background: url('../images/line-bottom.jpg') no-repeat 0 0;
+}
+.TransSearchDetail {    
+    overflow: hidden;
+    width: 100%
+}
+.ShowcaseImgMargin {
+    margin-bottom: 20px;
+}
+.Colum1 {
+    width: 436px;
+}
+.Colum2 {
+    width: 373px;
+}
+ .BlockDetailsInfo p {
+	font-size: 13px;
+	color: #333333;
+	overflow: hidden;
+	width: 100%;
+	padding: 3px 0;
+}
+
+.WidthTrans { padding-right: 20px !important; overflow: visible;}
+.SummaryTranssearch{ color: #333333; font-size: 14px;}
+
+/*------No-Item Page-------------*/
+.MessageShow
+{
+	font-size: 1.5em;
+	width: 100%;	
+	text-align: center;
+	padding: 20px 0;
+}
+/* Fix for Chrome & Safari only */
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+        #mainContent { right: -1px; }
+		#mainContent { padding: 0 0 0 29px;}
+		.TextInput { padding: 2px 0 7px 4px; vertical-align: top;}		
+		.LoginButton { padding: 0 22px !important;}
+		.LogoutButton{ height: 25px !important;}
+	
+    }	
+/*----------------*/
+.MarginSearch{ margin-right: 59px !important;}
+.SearchBox01Keyword{ width: 517px !important;}
+.TextLabel{ width: 108px;}
+.PaddingButton{ padding-left: 182px !important;}
+.PaddingErr{ padding-left: 187px !important;}
+.HomeMess{ margin-left: 2px !important;}
+.TextLabel1{ width: 70px; margin-right: 7px !important;}
+.ShareTranssearch{ padding-bottom: 2px; font-size: 14px;}
+.ShareNews {
+    margin: 3px 0 0 0;
+    }
+.ShareNews a {
+	font-family: Tahoma;
+	font-size: 10px;
+	color: #000;
+	text-transform: uppercase;
+	background: url(../images/share-icon.png) no-repeat 0 1px;
+	padding: 0 0px 0 18px;                        
+}
+.ShareNews a:hover{ text-decoration: underline;}
+.TextLabelTrans{ width: 60px;}
+.WidthSearch{ width: 565px !important;}
+.FontDetail{ font-size: 16px; font-weight: bold;margin-bottom: 3px;}
+.SearchBox01 td{ padding-bottom: 10px; }
+.MarginSearchButton{ margin-top: 8px;}
+p.WelcomeText a { text-decoration: underline;} 
+.ColorBackBtn { color: #fff !important;}
+.MessSuccess { color: #66a3b2 !important;}
+.MarginForgot { margin-left: 144px !important;}
+.TrackingImage {position: absolute;	left: 0; bottom: 0;}
+.SearchBox01Transsearch {width: 550px !important}
+div.Theme_BuildingBell_List .jScrollPaneTrack { z-index: 999;}
+.ChangeWidthCombobox{ display: block; overflow: hidden; line-height: 20px;}
+.Keyword { padding: 0 !important; overflow: visible;}
+.MessErr { color: #990000 !important; font-size: 1.2em; margin-top: 5px;}
+
+/* show case zoom colorbox */
+/*-----------Colorbox - Address contact-------------------------*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%; display: none !important;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+/* 
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:transparent;}
+#colorbox{width:516px; } 
+#cboxLoadedContent{
+	padding: 10px;
+}
+#cboxTopLeft{
+	width:25px; 
+	height:25px; 
+	background: none;
+}
+#cboxTopCenter{
+	height:25px; 
+	background: none;
+}
+#cboxTopRight{
+	width:25px; 
+	height:25px; 
+	background: none;
+}
+#cboxBottomLeft{
+	width:25px; 
+	height:25px; 
+	background: none;
+}
+#cboxBottomCenter{
+	height:25px;
+	background: none; 
+}
+#cboxBottomRight{
+	width:25px; 
+	height:25px; 
+	background: none;
+}
+#cboxMiddleLeft{
+	width:25px; 
+	background: none;
+}
+#cboxMiddleRight{
+	width:25px; 
+	background: none;
+}	    		
+.cboxIframe{background:#fff;} 
+#cboxLoadingOverlay{background:transparent;}       
+#cboxClose
+{
+    position:absolute; 
+    z-index: 999; 
+    top:40px; 
+    right:99px; 
+    display:block; 
+    background:url('../images/close_button.png') no-repeat center center;
+    cursor:pointer;	
+    width:18px;	
+    height:19px; 
+    text-indent:-9999px;	
+}
+#cboxClose:hover{background-position:bottom center;}
+
+#colorbox.ShowCaseColorbox {
+	width: auto;
+}    
+.ShowCaseColorbox #cboxTopLeft{
+	background:url(../images/border1.png) no-repeat 0 0;
+}
+.ShowCaseColorbox #cboxTopCenter{
+	background:url(../images/border1.png) repeat-x 0 -50px;
+}
+.ShowCaseColorbox #cboxTopRight{
+	background:url(../images/border1.png) no-repeat -25px 0;
+}
+.ShowCaseColorbox #cboxBottomLeft{
+	background:url(../images/border1.png) no-repeat 0 -25px;
+}
+.ShowCaseColorbox #cboxBottomCenter{
+	background:url(../images/border1.png) repeat-x 0 -75px;
+}
+.ShowCaseColorbox #cboxBottomRight{
+	background:url(../images/border1.png) no-repeat -25px -25px;
+}
+.ShowCaseColorbox #cboxMiddleLeft{
+	background:url(../images/border2.png) repeat-y 0 0;
+}
+.ShowCaseColorbox #cboxMiddleRight{
+	background:url(../images/border2.png) repeat-y -25px 0;
+}
+.ShowCaseColorbox #cboxContent{
+	background:#fff; 
+}
+.ShowCaseColorbox #cboxLoadingOverlay{
+	background: #fff url(../images/loading.gif) no-repeat center center;
+}
+.ShowCaseColorbox #cboxClose{
+	right: -9px;
+	top: -9px;
+}
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE .ShowCaseColorbox #cboxTopLeft,
+.cboxIE .ShowCaseColorbox #cboxTopCenter,
+.cboxIE .ShowCaseColorbox #cboxTopRight,
+.cboxIE .ShowCaseColorbox #cboxBottomLeft,
+.cboxIE .ShowCaseColorbox #cboxBottomCenter,
+.cboxIE .ShowCaseColorbox #cboxBottomRight,
+.cboxIE .ShowCaseColorbox #cboxMiddleLeft,
+.cboxIE .ShowCaseColorbox #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}

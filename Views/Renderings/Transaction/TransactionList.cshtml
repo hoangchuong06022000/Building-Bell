@@ -1,0 +1,145 @@
+﻿@model List<SitecoreCaseStudy.Models.Transaction>
+
+<div id="content">
+    <div id="innerContent01">
+        <div id="innerContent02">
+            <div id="mainContent">
+
+                <table class="FormItem LightScheme Keyword SearchBox01 SearchBox01Transsearch ">
+                    <tr>
+                        <td><label for="email">Mot- clé</label></td>
+                        <td colspan="2">
+                            <div class="TextInputWrapper01 TextInputSize01">
+                                <div class="TextInputWrapper02">
+                                    <input type="text" name="" id="email" class="TextInput LightScheme" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="LightScheme ">Mot-clé </label></td>
+                        <td>
+                            <div class="FormItemSpacing02">
+                                <div class="ui-widget ui-widget-wrapper">
+                                    <select class="combobox" name="" id="combobox">
+                                        <option value="1" class="First" selected="selected">All residence</option>
+                                        <option value="2">Type option 01 sdfdf fret tert ẻ rt ert retrt t re tr</option>
+                                        <option value="3">Type option 02 sdsf </option>
+                                        <option value="4">Type option 03 sdfdsf</option>
+                                        <option value="2">Type option 01 sdfsdf</option>
+                                        <optgroup label="Group01">
+                                            <option value="5">Type option 05</option>
+                                            <option value="6">Type option 06</option>
+                                            <option value="7">Type option 07</option>
+                                        </optgroup>
+                                        <optgroup label="Group02">
+                                            <option value="5">Type option 08</option>
+                                            <option value="6">Type option 09</option>
+                                            <option value="7">Type option 10</option>
+                                        </optgroup>
+                                        <option value="2">Type option 01</option>
+                                        <option value="3">Type option 02</option>
+                                        <option value="4">Type option 03</option>
+                                        <option value="2">Type option 01</option>
+                                        <option value="3">Type option 02</option>
+                                        <option value="4">Type option 03</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="FormButtonWrapper01 MarginSearchButton">
+                                <div class="FormButtonWrapper02">
+                                    <input class="CommonFormBtn" type="submit" title="Search" value="Rechercher" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="BlockPageNavigation BlockPageNavigationSpacing01">
+                    <a href="#" title="Prev" class="BackBtn BackBtnSmall"><span>Prev</span></a>
+                    <div class="CenteringBlock">
+                        <ul class="PagingIndex">
+                            <li>
+                                <a href="#" title="">1</a>
+                            </li>
+                            <li>
+                                <span>2</span>
+                            </li>
+                            <li>
+                                <a href="#" title="">3</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">4</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">5</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">...</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" title="Next" class="NextBtn NextBtnSmall"><span>Next</span></a>
+                </div>
+                <div class="HrReplacement HrStyle02">
+                    <hr class="Hidden" />
+                </div>
+                <div class="ResultsSet">
+                    <ul class="ResultsList">
+                        @foreach (var transaction in Model)
+                        {
+                            <li>
+                                <div class="BlockPhoto01">
+                                    <span class="TopRoundedDecoration">&nbsp;</span>
+                                    <a href="@transaction.TransactionDetail" title="View details">@transaction.Image</a>
+                                </div>
+
+                                <p class="BlockSearchItemInfo01 LightScheme">
+                                    <span>Posted by : Admin</span>
+                                    <br />
+                                    @transaction.Country
+                                    <br />
+                                    @transaction.NumberOfBedRooms bedrooms- @transaction.NumberOfBathRooms bathrooms
+                                    <br />
+                                    @transaction.Area m<sup>2</sup>
+                                    <br />
+                                    <strong class="DarkScheme">@transaction.FormatedCost &euro;</strong>
+                                </p>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="HrReplacement HrStyle01">
+                    <hr class="Hidden" />
+                </div>
+                <div class="BlockPageNavigation2 BlockPageNavigationMirror BlockPageNavigationMirrorSpacing01">
+                    <a href="#" title="Prev" class="BackBtn BackBtnSmall"><span>Prev</span></a>
+                    <div class="CenteringBlock">
+                        <ul class="PagingIndex">
+                            <li>
+                                <a href="#" title="">1</a>
+                            </li>
+                            <li>
+                                <span>2</span>
+                            </li>
+                            <li>
+                                <a href="#" title="">3</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">4</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">5</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">...</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" title="Next" class="NextBtn NextBtnSmall"><span>Next</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+ .BoxSearch
+  {          	
+  	padding:2px 0px;          	
+  }
+.BoxSearch2
+  {          	
+  	padding:2px 0px;          	
+  }
+  .BoxSearch3
+  {          	
+  	padding:2px 0px;          	
+  }
+.BoxSearch .Input
+{
+    padding: 2px 17px 0 8px;
+    margin-left: 6px;
+    line-height: 29px;    
+}
+.BoxSearch2 .Input
+{
+    padding: 2px 17px 0 7px;
+    margin-left: 2px;
+    line-height: 29px;    
+}
+.BoxSearch3 .Input
+{
+    padding: 2px 17px 0 7px;
+    margin-left: 2px;
+    line-height: 29px;
+}
+
+.Margin
+{
+    margin: -3px 0px 7px 4px;
+}
+#mainContent {        
+        padding: 0 0 0 27px;        
+}
+
+/*-------Combobox-home page----------------------*/
+div.Theme_BuildingBell_Wrapper p { padding: 7px 0 0 8px;}
+.LoginButton{ height: 22px !important;}
+.LogoutButtonLeft { padding: 0 0 0 15px;}
+.LogoutButtonRight {	padding: 7px 0 10px 0px;}
+.LogoutButton{ height: 25px !important;}
+.SearchBox01Keyword{ width: 542px !important; padding-left: 30px;}
+.MarginSearch  { margin-right: 54px !important;}
+.HomeMess{ margin: 0px !important; }
+.NewsLetterError{ margin-top: -15px;}
+.MarginSearchButton{margin-left: 20px;}
+
+.ui-widget{ margin-left: 0px;}
+.SearchBox01 {margin-top: 5px !important;} 
+
+.Keyword {width: 570px !important;}
+.FormItem label { margin-top: 5px !important;}
+.FormItem label { margin-right: 30px !important;}
+
+td .FormItemSpacing02  { width: 305px !important;}
+td label {width: 40px;}

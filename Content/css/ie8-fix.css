@@ -1,0 +1,21 @@
+.BoxSearch .Input
+{
+    line-height: 29px;
+}
+.BoxSearch2 .Input
+{
+    line-height: 29px;
+}
+.BoxSearch3 .Input
+{    
+    line-height: 29px;
+}
+#mainContent {        
+        padding: 0 0 0 28px;        
+}
+.LoginButton
+{	
+	height: 22px !important;	
+}
+.LogoutButton{ height: 25px !important;}
+

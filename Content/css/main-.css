@@ -1,0 +1,386 @@
+
+/* Specific Css */
+/* Horizontal Scrollbar */
+.myScrollbarH
+{
+    position: absolute;
+    z-index: 100;
+    height: 8px;
+    bottom: 1px;
+    left: 2px;
+    right: 7px;
+}
+.myScrollbarH > div
+{
+    position: absolute;
+    z-index: 100;
+    height: 100%; /* The following is probably what you want to customize */
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#a00), to(#f00));
+    background-image: -moz-linear-gradient(top, #f00, #900);
+    background-image: -o-linear-gradient(top, #f00, #900);
+    border: 1px solid #900;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    -o-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    -o-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+/* Vertical Scrollbar */
+.myScrollbarV
+{
+    position: absolute;
+    z-index: 100;
+    width: 8px;
+    bottom: 7px;
+    top: 2px;
+    right: 1px;
+}
+.myScrollbarV > div
+{
+    position: absolute;
+    z-index: 100;
+    width: 100%; /* The following is probably what you want to customize */
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#f00), to(#900));
+    background-image: -moz-linear-gradient(top, #f00, #900);
+    background-image: -o-linear-gradient(top, #f00, #900);
+    border: 1px solid #900;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    -o-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    -o-box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+*/
+.jspContainer
+{
+    overflow: hidden;
+    position: relative;
+}
+.jspPane
+{
+    position: absolute;
+}
+.jspVerticalBar
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+    background: #3e4043;
+    display: none;
+}
+.jspHorizontalBar
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: red;
+}
+.jspVerticalBar *, .jspHorizontalBar *
+{
+    margin: 0;
+    padding: 0;
+}
+.jspCapBottom
+{
+    background-position: left -4px;
+}
+.jspHorizontalBar .jspCap
+{
+    float: left;
+}
+.jspTrack
+{
+    background: #3e4043;
+    position: relative;
+    z-index: 1;
+}
+.jspDrag
+{
+    background: #9e9e9e;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+.jspDrag .jspDragTop, .jspDrag .jspDragBottom
+{
+    width: 8px;
+    height: 4px;
+    position: absolute;
+    left: 0px;
+    top: -4px;
+}
+.jspDrag .jspDragTop
+{
+}
+.jspDrag .jspDragBottom
+{
+    background-position: left -14px !important;
+    top: auto;
+    bottom: -4px;
+}
+.jspHover
+{
+    background: #9e9e9e;
+}
+.jspHover .jspDragTop
+{
+    background-position: left -19px !important;
+}
+.jspHover .jspDragBottom
+{
+    background-position: left -23px !important;
+}
+.jspHorizontalBar .jspTrack, .jspHorizontalBar .jspDrag
+{
+    float: left;
+    height: 100%;
+}
+.jspArrow
+{
+    background: #50506d;
+    text-indent: -20000px;
+    display: block;
+    cursor: pointer;
+}
+.jspArrow.jspDisabled
+{
+    cursor: default;
+    background: #80808d;
+}
+.jspVerticalBar .jspArrow
+{
+    height: 16px;
+}
+.jspHorizontalBar .jspArrow
+{
+    width: 16px;
+    float: left;
+    height: 100%;
+}
+.jspVerticalBar .jspArrow:focus
+{
+    outline: none;
+}
+.jspCorner
+{
+    background: #eeeef4;
+    float: left;
+    height: 100%;
+}
+
+/* Customize */
+/* DO NOT REMOVE or CHANGE */
+div.DropListUI
+{
+    /*Wrap all*/
+    position: relative;
+    width: 200px;
+}
+div.TopLevel
+{
+    /* move the active SelectUI to top */
+    z-index: 1000000 !important;
+}
+.SelectUITitle
+{
+    display: none !important;
+}
+select.SelectUI
+{
+    font-size: 1.2em;
+}
+.Multiple
+{
+    height: auto !important;
+}
+/* end of. DO NOT REMOVE or CHANGE */
+
+/* Theme */
+div.ThemeComboBox div.DropListUIContainer
+{
+    /*Wrap UL*/
+    border: none;
+}
+.DropListInput
+{
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    float: left;
+    font-size: 14px;
+    width: 184px;
+    height: 26px;
+    padding: 0px;
+    margin: 0px 0px 0px 8px;
+    border: 0px none;
+}
+div.ThemeComboBox p
+{
+    margin: 0px 0 0 0 !important;
+    cursor: pointer;
+    overflow: hidden !important;
+    white-space: nowrap;
+}
+div.ThemeComboBox .Arrow
+{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+div.ThemeComboBox ul.ThemeComboBox
+{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+div.ThemeComboBox ul.ThemeComboBox li
+{
+    width: 100%;
+    padding: 0;
+}
+div.ThemeComboBox ul.ThemeComboBox li.First
+{
+    border-top: none !important;
+}
+div.ThemeComboBox ul.ThemeComboBox li span
+{
+    font-size: 1em;
+    font-weight: bolder;
+    font-style: italic;
+    display: block;
+    cursor: default;
+}
+div.ThemeComboBox ul.ThemeComboBox li a:link, div.ThemeComboBox ul.ThemeComboBox li a:visited
+{
+    display: block;
+    font-size: 1em;
+    line-height: 18px;
+    text-decoration: none;
+}
+div.ThemeComboBox ul.ThemeComboBox li ul
+{
+    border: none;
+}
+div.ThemeComboBox ul.ThemeComboBox li ul li
+{
+    font-size: 1em;
+}
+/* end. Theme */
+
+/* Theme customize */
+div.ThemeMiddle
+{
+    /*Wrap all*/
+    width: 200x;
+    height: 30px;
+    background: url(../images/residence.png) left top no-repeat;
+    margin-bottom: 9px;
+}
+div.ThemeMiddle .ScrollWrap
+{
+    width: 200px;
+    max-height: 300px;
+    border-bottom: 1px solid #a3c8e6;
+}
+div.ThemeMiddle div.DropListUIContainerUp .ScrollWrap
+{
+    border-top: 1px solid #a3c8e6;
+    border-bottom: none;
+}
+div.ThemeMiddle .MultipleContainer .ScrollWrap
+{
+    border-bottom: 1px solid #a3c8e6;
+    border-top: 1px solid #a3c8e6;
+}
+div.ThemeMiddle p
+{
+    width: 184px;
+    font-size: 1.4em;
+    line-height: 18px !important;
+    padding: 6px 10px 0px 12px;
+    height: 26px;
+    margin-left: 5px;
+}
+/* UL */
+div.ThemeMiddle ul.ThemeMiddle
+{
+    width: 200px;
+    background-color: #fff;
+    border-left: 1px solid #9e9e9e;
+}
+div.ThemeMiddle ul.ThemeMiddle li
+{
+    font-size: 1.1em;
+    line-height: 16px;
+    border-top: 1px solid #f9f9f9;
+}
+/* Use for optgroup name */
+div.ThemeMiddle ul.ThemeMiddle li span
+{
+    padding: 3px 0 3px 4px;
+}
+/*Normal*/
+div.ThemeMiddle ul.ThemeMiddle li a:link, div.ThemeMiddle ul.ThemeMiddle li a:visited
+{
+    width: 143px;   
+    padding: 2px 0px 0px 5px;
+  
+}
+/*Hover*/
+div.ThemeMiddle ul.ThemeMiddle li.Hover a:link, div.ThemeMiddle ul.ThemeMiddle li.Hover a:visited
+{
+    text-decoration: none;
+    background: #f9f9f9;
+    
+}
+/*Active*/
+div.ThemeMiddle ul.ThemeMiddle li.Active a:link, div.ThemeMiddle ul.ThemeMiddle li.Active a:visited
+{
+    text-decoration: none;
+    background: #9F3;
+}
+/*level 2 - in case has optgroup*/
+div.ThemeMiddle ul.ThemeMiddle li ul li a:link, div.ThemeMiddle ul.ThemeMiddle li ul li a:visited
+{
+    width: 200px;
+    padding: 3px 0px 5px 15px;
+    font-weight: normal;
+}
+/* end: Theme customize */
