@@ -20,10 +20,26 @@ namespace SitecoreCaseStudy.Models
         {
             get { return GetFieldValue("Image"); }
         }
-
-        public MvcHtmlString Country
+        // Move to DI
+        public string GetImageSrc(Item item)
         {
-            get { return GetFieldValue("Country"); }
+            Sitecore.Data.Fields.ImageField imageField = item.Fields["Image"];
+            if (imageField != null && imageField.MediaItem != null)
+            {
+                Sitecore.Data.Items.MediaItem image = new Sitecore.Data.Items.MediaItem(imageField.MediaItem);
+                return Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(image));
+            }
+            return "";
+        }
+
+        public string ImageUrl
+        {
+            get { return GetImageSrc(Item); }
+        }
+
+        public MvcHtmlString Location
+        {
+            get { return GetFieldValue("Location"); }
         }
 
         public MvcHtmlString Summary
@@ -38,12 +54,12 @@ namespace SitecoreCaseStudy.Models
 
         public MvcHtmlString NumberOfBedRooms
         {
-            get { return GetFieldValue("NumberOfFloors"); }
+            get { return GetFieldValue("NumberOfBedRooms"); }
         }
 
         public MvcHtmlString NumberOfBathRooms
         {
-            get { return GetFieldValue("NumberOfFloors"); }
+            get { return GetFieldValue("NumberOfBathRooms"); }
         }
 
         public MvcHtmlString PropertyCondition

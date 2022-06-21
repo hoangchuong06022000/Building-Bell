@@ -10,7 +10,7 @@ namespace SitecoreCaseStudy.Controllers
     public class NewsController : Controller
     {
         // GET: News
-        public ActionResult NewsList()
+        public ActionResult GetNewsList()
         {
             var item = Sitecore.Mvc.Presentation.RenderingContext.Current.Rendering.Item;
             var slideIds = Sitecore.Data.ID.ParseArray(item["News List"]);
@@ -26,7 +26,7 @@ namespace SitecoreCaseStudy.Controllers
             return View("~/Views/Renderings/News/NewsList.cshtml", listNews);
         }
 
-        public ActionResult NewsDetails()
+        public ActionResult GetNewsDetails()
         {
             var item = Sitecore.Mvc.Presentation.RenderingContext.Current.Rendering.Item;
             var news = new News { Item = item };

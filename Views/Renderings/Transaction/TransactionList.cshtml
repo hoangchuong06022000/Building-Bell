@@ -4,58 +4,31 @@
     <div id="innerContent01">
         <div id="innerContent02">
             <div id="mainContent">
-
-                <table class="FormItem LightScheme Keyword SearchBox01 SearchBox01Transsearch ">
-                    <tr>
-                        <td><label for="email">Mot- clé</label></td>
-                        <td colspan="2">
-                            <div class="TextInputWrapper01 TextInputSize01">
-                                <div class="TextInputWrapper02">
-                                    <input type="text" name="" id="email" class="TextInput LightScheme" />
+                @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
+                {
+                    @Html.Sitecore().FormHandler("Transaction", "TransactionSearch")
+                    <table class="FormItem LightScheme Keyword SearchBox01 SearchBox01Transsearch ">
+                        <tr>
+                            <td><label for="email">Input: </label></td>
+                            <td colspan="2">
+                                <div class="TextInputWrapper01 TextInputSize01">
+                                    <div class="TextInputWrapper02">
+                                        <input type="text" name="stringSearch" id="stringSearch" class="TextInput LightScheme" />
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label class="LightScheme ">Mot-clé </label></td>
-                        <td>
-                            <div class="FormItemSpacing02">
-                                <div class="ui-widget ui-widget-wrapper">
-                                    <select class="combobox" name="" id="combobox">
-                                        <option value="1" class="First" selected="selected">All residence</option>
-                                        <option value="2">Type option 01 sdfdf fret tert ẻ rt ert retrt t re tr</option>
-                                        <option value="3">Type option 02 sdsf </option>
-                                        <option value="4">Type option 03 sdfdsf</option>
-                                        <option value="2">Type option 01 sdfsdf</option>
-                                        <optgroup label="Group01">
-                                            <option value="5">Type option 05</option>
-                                            <option value="6">Type option 06</option>
-                                            <option value="7">Type option 07</option>
-                                        </optgroup>
-                                        <optgroup label="Group02">
-                                            <option value="5">Type option 08</option>
-                                            <option value="6">Type option 09</option>
-                                            <option value="7">Type option 10</option>
-                                        </optgroup>
-                                        <option value="2">Type option 01</option>
-                                        <option value="3">Type option 02</option>
-                                        <option value="4">Type option 03</option>
-                                        <option value="2">Type option 01</option>
-                                        <option value="3">Type option 02</option>
-                                        <option value="4">Type option 03</option>
-                                    </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="FormButtonWrapper01 MarginSearchButton">
+                                    <div class="FormButtonWrapper02">
+                                        <input class="CommonFormBtn" type="submit" title="Search" value="Search" />
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="FormButtonWrapper01 MarginSearchButton">
-                                <div class="FormButtonWrapper02">
-                                    <input class="CommonFormBtn" type="submit" title="Search" value="Rechercher" />
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                            </td>
+                        </tr>
+                    </table>
+                }
                 <div class="BlockPageNavigation BlockPageNavigationSpacing01">
                     <a href="#" title="Prev" class="BackBtn BackBtnSmall"><span>Prev</span></a>
                     <div class="CenteringBlock">
@@ -98,7 +71,7 @@
                                 <p class="BlockSearchItemInfo01 LightScheme">
                                     <span>Posted by : Admin</span>
                                     <br />
-                                    @transaction.Country
+                                    @transaction.Location
                                     <br />
                                     @transaction.NumberOfBedRooms bedrooms- @transaction.NumberOfBathRooms bathrooms
                                     <br />

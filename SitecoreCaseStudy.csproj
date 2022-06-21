@@ -482,6 +482,9 @@
     <Content Include="Views\Renderings\Shared\TopNavBar.cshtml" />
     <Content Include="Views\Renderings\Home\HomePage.cshtml" />
     <Content Include="Views\Layouts\OthersLayout.cshtml" />
+    <Content Include="Views\Renderings\Contact\Contact.cshtml" />
+    <Content Include="Views\Renderings\Residence\Residence.cshtml" />
+    <Content Include="Views\Renderings\Home\ForgotPassword.cshtml" />
     <None Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

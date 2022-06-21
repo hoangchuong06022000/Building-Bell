@@ -11,11 +11,16 @@
                 <div class="BoxText">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in velit id metus dignissim tincidunt vitae vitae nulla.
                 </div>
-                <div class="BoxSearch">
-                    <input class="Input LightScheme" value="Search..." type="text" />
-                    <input class="Submit" value="" type="submit" />
-                </div>
+                @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
+                {
+                    @Html.Sitecore().FormHandler("Home", "GetTransactionSearchResult")
+                    <div class="BoxSearch">
+                        <input class="Input LightScheme" placeholder="Location..." type="text" name="stringSearch" />
+                        <input class="Submit" value="" type="submit" />
+                    </div>
+                }
             </div>
+
             <div class="Clr">
             </div>
         </div>
@@ -31,7 +36,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in velit id metus dignissim tincidunt vitae vitae nulla.
                 </div>
                 <div class="BoxSearch2">
-                    <input class="Input LightScheme" value="Search..." type="text" />
+                    <input class="Input LightScheme" placeholder="Search..." type="text" />
                     <input class="Submit1" value="" type="submit" />
                 </div>
             </div>
@@ -50,7 +55,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in velit id metus dignissim tincidunt vitae vitae nulla.
                 </div>
                 <div class="BoxSearch3">
-                    <input class="Input LightScheme" value="Your mail..." type="text" />
+                    <input class="Input LightScheme" placeholder="Your mail..." type="text" id="stringSearch" name="stringSearch"/>
                     <input class="Submit2" value="" type="submit" />
                 </div>
             </div>
