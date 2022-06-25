@@ -264,11 +264,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Navigation.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Models\TransactionCategory.cs" />
     <Compile Include="Models\TransactionType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DraftStateMailSender.cs" />
+    <Compile Include="Utilities\MailSender.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\combobox\combobox-theme.css" />
@@ -484,7 +487,8 @@
     <Content Include="Views\Layouts\OthersLayout.cshtml" />
     <Content Include="Views\Renderings\Contact\Contact.cshtml" />
     <Content Include="Views\Renderings\Residence\Residence.cshtml" />
-    <Content Include="Views\Renderings\Home\ForgotPassword.cshtml" />
+    <Content Include="Views\Renderings\Home\ForgotPasswordPage.cshtml" />
+    <Content Include="Views\Renderings\Home\SetNewPasswordPage.cshtml" />
     <None Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -496,7 +500,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
-    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

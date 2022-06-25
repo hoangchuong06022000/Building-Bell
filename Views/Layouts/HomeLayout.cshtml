@@ -43,7 +43,21 @@
             </div>
         </div>
         <!--Rendering Body-->
-        @Html.Sitecore().Placeholder("main_body")
+        @*@Html.Sitecore().Placeholder("main_body")*@
+        <div id="content" class="Homepage">
+            <div id="innerContent01">
+                <div id="innerContent02">
+                    <div id="mainContent">
+                        <!--Login Box-->
+                        @Html.Sitecore().Placeholder("login_box")
+                        <!--News-->
+                        @Html.Sitecore().Placeholder("news_content_home")
+                        <!--Transaction Block-->
+                        @Html.Sitecore().Placeholder("transaction_block_home")
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="Footer" class="FooterMargin">
             <div id="FooterContent">
                 <div class="FooterBlock01">

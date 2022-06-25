@@ -1,25 +1,29 @@
-﻿@model SitecoreCaseStudy.Models.News
+﻿@model List<SitecoreCaseStudy.Models.News>
 
 <div class="ContentHomeMain">
     <div class="ContentImg">
         <img src="~/Content/images/news.png" alt="Building Bell Logo" title="Building Bell Logo" />
     </div>
+    
     <div class="ContentText">
         <h2 class="TitleH2 DarkScheme">
             News
         </h2>
-        <div class="Sumary LightScheme ">
-            <h3 class="FontH3Home">
-                <a href="@Model.NewsDetail">@Model.Title</a>
-            </h3>
-            <h3 class="FontH3Home">
-                @Model.Date
-            </h3>
-            <p class="NextButton FontSumary ">
-                @Model.Summary
-            </p>
-        </div>
-    </div>
+        @foreach (var news in Model)
+        {
+            <div class="Sumary LightScheme ">
+                <h3 class="FontH3Home">
+                    <a href="@news.NewsDetail">@news.Title</a>
+                </h3>
+                <h3 class="FontH3Home">
+                    @news.Date
+                </h3>
+                <p class="NextButton FontSumary ">
+                    @news.Summary
+                </p>
+            </div>
+        }
+     </div>
     <div class="Clr">
     </div>
 </div>

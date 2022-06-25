@@ -1,46 +1,72 @@
 ﻿using Sitecore;
 using Sitecore.Collections;
+using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
 using Sitecore.Globalization;
+using Sitecore.Mvc.Presentation;
 using Sitecore.Security.Accounts;
 using Sitecore.Security.Authentication;
+using Sitecore.Security.Domains;
 using SitecoreCaseStudy.Models;
+using SitecoreCaseStudy.Utilities;
 using System;
+using System.Dynamic;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Sitecore.Data.Fields;
 
 namespace SitecoreCaseStudy.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View("~/Views/Renderings/Home/HomePage.cshtml");
-        }
-
         public ActionResult InitTopNavBar()
         {
-            Dictionary<string, string> list = new Dictionary<string, string>();
+            Sitecore.Data.Database database = Sitecore.Data.Database.GetDatabase("web");
+            var homeItem = database.SelectSingleItem("fast:/sitecore/content/homecasestudy");
+            var currentLanguage = Sitecore.Context.Language;
+            // Move to DI
+            IList<Navigation> listNavigation = new List<Navigation>();
+            listNavigation.Add(new News().BuildNavigation(homeItem));
+            if (homeItem.HasChildren)
+            {
+                foreach (Item item in homeItem.Children)
+                {
+                    CheckboxField hideInNavigation = item.Fields["Hide In Navigation"];
+                    if (!hideInNavigation.Checked)
+                    {
+                        listNavigation.Add(new News().BuildNavigation(item));
+                    }
+                }
+            }       
+            Dictionary<string, string> listLanguage = new Dictionary<string, string>();
             LanguageCollection langColl = LanguageManager.GetLanguages(Context.Database);
             // Move to DI
             foreach (Language language in langColl)
             {
                 string url = new News().GetURL(Context.Item, language);
-                list.Add(language.Name, url);
+                listLanguage.Add(language.Name, url);
             }
-            return View("~/Views/Renderings/Shared/TopNavBar.cshtml", list);
+            dynamic myModel = new ExpandoObject();
+            myModel.Navigations = listNavigation;
+            myModel.Languages = listLanguage;
+            ViewBag.CurrentLanguage = currentLanguage;
+            return View("~/Views/Renderings/Shared/TopNavBar.cshtml", myModel);
         }
 
         public ActionResult Login()
         {
-            if (TempData.ContainsKey("loginFail"))
+            if (TempData.ContainsKey("loginFailMessage"))
             {
-                ViewBag.LoginFailMessage = TempData["loginFail"].ToString();
+                ViewBag.LoginFailMessage = TempData["loginFailMessage"].ToString();
             }
-            if(Session["User"] != null)
+            if (TempData.ContainsKey("passwordChanged"))
+            {
+                ViewBag.PasswordChanged = TempData["passwordChanged"].ToString();
+            }
+            if (Session["User"] != null)
             {
                 User currentUser = Session["User"] as User;
                 return View("~/Views/Renderings/Home/LoginBox.cshtml", currentUser);
@@ -59,7 +85,7 @@ namespace SitecoreCaseStudy.Controllers
                 Session["User"] = user;
                 return Redirect("HomeCaseStudy");
             }
-            TempData["loginFail"] = "Login in error mesage!";
+            TempData["loginFailMessage"] = "Username or Password incorrect!!";
             return Redirect("HomeCaseStudy");
         }
 
@@ -73,9 +99,17 @@ namespace SitecoreCaseStudy.Controllers
         public ActionResult GetNewsContentHome()
         {
             Sitecore.Data.Database database = Sitecore.Data.Database.GetDatabase("web");
-            var item = database.SelectItems("fast:/sitecore/content/homecasestudy/newslist/*").OrderByDescending(x => x.Created).FirstOrDefault();
-            var news = new News { Item = item };
-            return View("~/Views/Renderings/Home/NewsContentHome.cshtml", news);
+            var quantityOfNews = database.GetItem("/sitecore/content/homecasestudy/newslist").Fields["QuantityOfNews"].Value;
+            var items = database.SelectItems("fast:/sitecore/content/homecasestudy/newslist/*").OrderByDescending(x => x.Created).Take(int.Parse(quantityOfNews));
+            IList<News> newsList = new List<News>();
+            foreach (var news in items)
+            {
+                if (news != null)
+                {
+                    newsList.Add(new News { Item = news });
+                }
+            }
+            return View("~/Views/Renderings/Home/NewsContentHome.cshtml", newsList);
         }
 
         public ActionResult InitTransactionBlockHome()
@@ -113,7 +147,7 @@ namespace SitecoreCaseStudy.Controllers
         public ActionResult Register(string firstName, string lastName, string email, string password)
         {
             string domain = "buildingbell";
-            string role = "Access Only News Folder";
+            string role = "Contributor";
             string userName = string.Concat(firstName, lastName);
             userName = string.Format(@"{0}\{1}", domain, userName);
             string newPassword = password;
@@ -142,13 +176,44 @@ namespace SitecoreCaseStudy.Controllers
 
         public ActionResult RetrievePassword()
         {
-            return View("~/Views/Renderings/Home/ForgotPassword.cshtml");
+            if (TempData.ContainsKey("invalidEmail"))
+            {
+                ViewBag.InvalidEmail = TempData["invalidEmail"].ToString();
+            }
+            return View("~/Views/Renderings/Home/ForgotPasswordPage.cshtml");
         }
 
         [HttpPost]
         public ActionResult RetrievePassword(string email)
         {
-            return View("~/Views/Renderings/Home/ForgotPassword.cshtml");
+            var userName = Membership.GetUserNameByEmail(email);
+            if (userName == null)
+            {
+                TempData["invalidEmail"] = "Invalid email address!!";
+                return Redirect("ForgotPassword");
+            }
+            var user = Membership.GetUser(userName);
+            //Move to DI
+            var sendMail = new MailSender();
+            sendMail.SendOTP("Your OTP:", email);
+            TempData["otp"] = sendMail.getOTP();
+            TempData["user"] = user;
+            return Redirect("SetNewPassword");
+        }
+
+        public ActionResult SetNewPassword()
+        {
+            ViewBag.OTP = TempData["otp"].ToString();
+            return View("~/Views/Renderings/Home/SetNewPasswordPage.cshtml");
+        }
+
+        [HttpPost]
+        public ActionResult SetNewPassword(string newPassword)
+        {
+            var user = TempData["user"] as MembershipUser;          
+            user.ChangePassword(user.ResetPassword(), newPassword);
+            TempData["passwordChanged"] = "Your password is changed!!";
+            return Redirect("HomeCaseStudy");
         }
     }
 }

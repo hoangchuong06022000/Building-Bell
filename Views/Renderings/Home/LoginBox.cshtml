@@ -15,10 +15,10 @@
                             Search
                         </legend>
                         <div class="SelectInput">
-                            <input class="InputHome LightScheme" type="text" id="userName" name="userName" placeholder="Username" />
+                            <input class="InputHome LightScheme" type="text" id="userName" name="userName" placeholder="Username" required/>
                         </div>
                         <div class="SelectInput">
-                            <input class="InputHome LightScheme" type="password" id="password" name="password" placeholder="Password" />
+                            <input class="InputHome LightScheme" type="password" id="password" name="password" placeholder="Password" required/>
                         </div>
                         <p class="ForgotPass">
                             <a href="/ForgotPassword">Forgot password?</a>
@@ -40,7 +40,10 @@
                 </div>
                 <div class="Clr"></div>
                 <label>
-                    @(new HtmlString(ViewBag.LoginFailMessage.ToString()))
+                    @ViewBag.PasswordChanged
+                </label>
+                <label>
+                    @ViewBag.LoginFailMessage
                 </label>
             </div>
         }

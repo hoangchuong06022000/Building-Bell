@@ -1,6 +1,7 @@
 ﻿using Sitecore.Data.Items;
 using Sitecore.Globalization;
 using Sitecore.Links;
+using Sitecore.Mvc.Presentation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,7 +22,23 @@ namespace SitecoreCaseStudy.Models
         {
             get { return GetFieldValue("Image"); }
         }
-        
+        //Move to DI
+        public string GetImageSrc(Item item)
+        {
+            Sitecore.Data.Fields.ImageField imageField = item.Fields["Image"];
+            if (imageField != null && imageField.MediaItem != null)
+            {
+                Sitecore.Data.Items.MediaItem image = new Sitecore.Data.Items.MediaItem(imageField.MediaItem);
+                return Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(image));
+            }
+            return "";
+        }
+
+        public string ImageUrl
+        {
+            get { return GetImageSrc(Item); }
+        }
+
         public MvcHtmlString Title
         {
             get { return GetFieldValue("Title"); }
@@ -46,6 +63,17 @@ namespace SitecoreCaseStudy.Models
         {
             get { return GetURL(Item, Language); }
         }
+        // Move to DI
+        public Navigation BuildNavigation(Item item)
+        {
+            return new Navigation
+            {
+                NavigationTitle = item.Fields["Title"].Value,
+                NavigationLink = GetURL(item, Language),
+                ActiveClass = PageContext.Current.Item.ID == item.ID ? "Active" : string.Empty
+            };
+        }
+
         // Move to DI
         public string GetURL(Item item, Language language)
         {

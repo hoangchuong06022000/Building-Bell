@@ -55,6 +55,7 @@
                                 </div>
                             </div>
                             <div class="Clr"></div>
+                            <p class="NewsLetterError MarginForgot" id="errorRePassword"></p>
                         </div>
 
                         <div class="HrReplacement HrStyle01"><hr class="Hidden" /></div>
@@ -62,7 +63,7 @@
                         <div class="ButtonGroup ButtonGroupSpacing01 PaddingButton">
                             <div class="FormButtonWrapper01">
                                 <div class="FormButtonWrapper02">
-                                    <input class="CommonFormBtn" type="submit" title="Register" value="Register" />
+                                    <input class="CommonFormBtn" type="submit" title="Register" value="Register" onclick="return checkValidation() == true;"/>
                                 </div>
                             </div>
                             <div class="FormButtonWrapper01">
@@ -77,3 +78,14 @@
         </div>
     </div>
 </div>
+<script>
+    function checkValidation() {
+        var password = document.getElementById("password").value;
+        var rePassword = document.getElementById("re-password").value;
+        if (password == rePassword) {
+            return true;
+        } else {
+            document.getElementById("errorRePassword").innerHTML = "Re-Password Incorrect!!";
+        }
+    }
+</script>
