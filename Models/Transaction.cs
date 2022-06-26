@@ -2,6 +2,7 @@
 using Sitecore.Data.Items;
 using Sitecore.Globalization;
 using Sitecore.Links;
+using SitecoreCaseStudy.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,69 +13,59 @@ namespace SitecoreCaseStudy.Models
 {
     public class Transaction
     {
+        private ItemExtentions itemExtentions = new ItemExtentions();
         public Item Item { get; set; }
 
         public Language Language { get; set; }
 
         public MvcHtmlString Image
         {
-            get { return GetFieldValue("Image"); }
-        }
-        // Move to DI
-        public string GetImageSrc(Item item)
-        {
-            Sitecore.Data.Fields.ImageField imageField = item.Fields["Image"];
-            if (imageField != null && imageField.MediaItem != null)
-            {
-                Sitecore.Data.Items.MediaItem image = new Sitecore.Data.Items.MediaItem(imageField.MediaItem);
-                return Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(image));
-            }
-            return "";
+            get { return itemExtentions.GetFieldValue(Item, "Image"); }
         }
 
         public string ImageUrl
         {
-            get { return GetImageSrc(Item); }
+            get { return itemExtentions.GetImageSrc(Item); }
         }
 
         public MvcHtmlString Location
         {
-            get { return GetFieldValue("Location"); }
+            get { return itemExtentions.GetFieldValue(Item, "Location"); }
         }
 
         public MvcHtmlString Summary
         {
-            get { return GetFieldValue("Summary"); }
+            get { return itemExtentions.GetFieldValue(Item, "Summary"); }
         }
 
         public MvcHtmlString NumberOfFloors
         {
-            get { return GetFieldValue("NumberOfFloors"); }
+            get { return itemExtentions.GetFieldValue(Item, "NumberOfFloors"); }
         }
 
         public MvcHtmlString NumberOfBedRooms
         {
-            get { return GetFieldValue("NumberOfBedRooms"); }
+            get { return itemExtentions.GetFieldValue(Item, "NumberOfBedRooms"); }
         }
 
         public MvcHtmlString NumberOfBathRooms
         {
-            get { return GetFieldValue("NumberOfBathRooms"); }
+            get { return itemExtentions.GetFieldValue(Item, "NumberOfBathRooms"); }
         }
 
         public MvcHtmlString PropertyCondition
         {
-            get { return GetFieldValue("PropertyCondition"); }
+            get { return itemExtentions.GetFieldValue(Item, "PropertyCondition"); }
         }
 
         public MvcHtmlString Area
         {
-            get { return GetFieldValue("Area"); }
+            get { return itemExtentions.GetFieldValue(Item, "Area"); }
         }
 
         public MvcHtmlString Cost
         {
-            get { return GetFieldValue("Cost"); }
+            get { return itemExtentions.GetFieldValue(Item, "Cost"); }
         }
 
         public string FormatedCost
@@ -84,47 +75,17 @@ namespace SitecoreCaseStudy.Models
 
         public string TransactionDetail
         {
-            get { return GetURL(Item, Language); }
-        }
-
-        public string GetURL(Item item, Language language)
-        {
-            string url = LinkManager.GetItemUrl(item,
-              new UrlOptions
-              {
-                  LanguageEmbedding = LanguageEmbedding.Always,
-                  LanguageLocation = LanguageLocation.FilePath,
-                  Language = language
-              });
-            return url;
-        }
-
-        public Item GetSelectedItemFromDroplistField(Item item, string fieldName)
-        {
-            Field field = item.Fields[fieldName];
-            if (field == null || string.IsNullOrEmpty(field.Value))
-            {
-                return null;
-            }
-
-            var fieldSource = field.Source ?? string.Empty;
-            var selectedItemPath = fieldSource.TrimEnd('/') + "/" + field.Value;
-            return item.Database.GetItem(selectedItemPath);
+            get { return itemExtentions.GetURL(Item, Language); }
         }
 
         public string TransactionCategoryName
         {
-            get { return GetSelectedItemFromDroplistField(Item, "TransactionCategory").Fields["TransactionCategoryName"].Value; }
+            get { return itemExtentions.GetSelectedItemFromDroplistField(Item, "TransactionCategory").Fields["TransactionCategoryName"].Value; }
         }
 
         public string TransactionTypeName 
         {
-            get { return GetSelectedItemFromDroplistField(Item, "TransactionType").Fields["TransactionTypeName"].Value; }
-        }
-
-        private MvcHtmlString GetFieldValue(string fieldName)
-        {
-            return new MvcHtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(Item, fieldName));
+            get { return itemExtentions.GetSelectedItemFromDroplistField(Item, "TransactionType").Fields["TransactionTypeName"].Value; }
         }
     }
 }

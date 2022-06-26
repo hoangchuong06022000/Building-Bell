@@ -7,7 +7,7 @@ namespace SitecoreCaseStudy.Utilities
 {
     public class RobotsHandler : IHttpHandler
     {
-        private string defaultRobots = "User-agent: * \r\n Disallow";
+        private string defaultRobots = "User-agent: * \r\nDisallow";
         public bool IsReusable
         {
             get { return true; }
@@ -15,20 +15,19 @@ namespace SitecoreCaseStudy.Utilities
 
         public void ProcessRequest(HttpContext context)
         {
-            string robotsTxt = defaultRobots;
+            string robotsTxt = null;
             if ((Sitecore.Context.Site == null) || Sitecore.Context.Database == null)
             {
                 robotsTxt = defaultRobots;
             }
 
             var homeItem = Sitecore.Context.Database.GetItem(Sitecore.Context.Site.StartPath);
-            var robotsItem = homeItem.Axes.GetDescendant("Robots");
 
-            if (robotsItem != null)
+            if (homeItem != null)
             {
-                if (!string.IsNullOrEmpty(robotsItem["Robots"]))
+                if (!string.IsNullOrEmpty(homeItem["Robots"]))
                 {
-                    robotsTxt = robotsItem.Fields["Robots"].Value;
+                    robotsTxt = homeItem.Fields["Robots"].Value;
                 }
             }
 

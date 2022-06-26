@@ -22,6 +22,8 @@ namespace SitecoreCaseStudy.Controllers
 {
     public class HomeController : Controller
     {
+        private ItemExtentions itemExtentions = new ItemExtentions();
+        private MailSender sendMail = new MailSender();
         public ActionResult InitTopNavBar()
         {
             Sitecore.Data.Database database = Sitecore.Data.Database.GetDatabase("web");
@@ -29,7 +31,7 @@ namespace SitecoreCaseStudy.Controllers
             var currentLanguage = Sitecore.Context.Language;
             // Move to DI
             IList<Navigation> listNavigation = new List<Navigation>();
-            listNavigation.Add(new News().BuildNavigation(homeItem));
+            listNavigation.Add(itemExtentions.BuildNavigation(homeItem, currentLanguage));
             if (homeItem.HasChildren)
             {
                 foreach (Item item in homeItem.Children)
@@ -37,7 +39,7 @@ namespace SitecoreCaseStudy.Controllers
                     CheckboxField hideInNavigation = item.Fields["Hide In Navigation"];
                     if (!hideInNavigation.Checked)
                     {
-                        listNavigation.Add(new News().BuildNavigation(item));
+                        listNavigation.Add(itemExtentions.BuildNavigation(item, currentLanguage));
                     }
                 }
             }       
@@ -46,7 +48,7 @@ namespace SitecoreCaseStudy.Controllers
             // Move to DI
             foreach (Language language in langColl)
             {
-                string url = new News().GetURL(Context.Item, language);
+                string url = itemExtentions.GetURL(Context.Item, language);
                 listLanguage.Add(language.Name, url);
             }
             dynamic myModel = new ExpandoObject();
@@ -140,22 +142,30 @@ namespace SitecoreCaseStudy.Controllers
 
         public ActionResult Register()
         {
+            if (TempData.ContainsKey("rePasswordIncorrect"))
+            {
+                ViewBag.RePasswordIncorrect = TempData["rePasswordIncorrect"].ToString();
+            }
             return View("~/Views/Renderings/Home/RegisterBox.cshtml");
         }
 
         [HttpPost]
-        public ActionResult Register(string firstName, string lastName, string email, string password)
+        public ActionResult Register(string firstName, string lastName, string email, string password, string rePassword)
         {
             string domain = "buildingbell";
             string role = "Contributor";
             string userName = string.Concat(firstName, lastName);
             userName = string.Format(@"{0}\{1}", domain, userName);
-            string newPassword = password;
+            if(rePassword != password)
+            {
+                TempData["rePasswordIncorrect"] = "Re-Password Incorrect!!";
+                return Redirect("Register");
+            }
             try
             {
                 if (!Sitecore.Security.Accounts.User.Exists(userName))
                 {
-                    Membership.CreateUser(userName, newPassword, email);
+                    Membership.CreateUser(userName, password, email);
 
                     Sitecore.Security.Accounts.User user = Sitecore.Security.Accounts.User.FromName(userName, true);
                     Sitecore.Security.UserProfile userProfile = user.Profile;
@@ -192,26 +202,32 @@ namespace SitecoreCaseStudy.Controllers
                 TempData["invalidEmail"] = "Invalid email address!!";
                 return Redirect("ForgotPassword");
             }
-            var user = Membership.GetUser(userName);
-            //Move to DI
-            var sendMail = new MailSender();
+            var user = Membership.GetUser(userName);         
             sendMail.SendOTP("Your OTP:", email);
-            TempData["otp"] = sendMail.getOTP();
             TempData["user"] = user;
             return Redirect("SetNewPassword");
         }
 
         public ActionResult SetNewPassword()
         {
-            ViewBag.OTP = TempData["otp"].ToString();
+            if (TempData.ContainsKey("otpIncorrect"))
+            {
+                ViewBag.OTPIncorrect = TempData["otpIncorrect"].ToString();
+            }
             return View("~/Views/Renderings/Home/SetNewPasswordPage.cshtml");
         }
 
         [HttpPost]
-        public ActionResult SetNewPassword(string newPassword)
+        public ActionResult SetNewPassword(string newPassword, string otp)
         {
             var user = TempData["user"] as MembershipUser;          
             user.ChangePassword(user.ResetPassword(), newPassword);
+            string otpCheck = sendMail.getOTP();
+            if (otpCheck != otp)
+            {
+                TempData["otpIncorrect"] = "OTP Incorrect!!";
+                return Redirect("SetNewPassword");
+            }
             TempData["passwordChanged"] = "Your password is changed!!";
             return Redirect("HomeCaseStudy");
         }

@@ -2,6 +2,7 @@
 using Sitecore.Globalization;
 using Sitecore.Links;
 using Sitecore.Mvc.Presentation;
+using SitecoreCaseStudy.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,34 +15,24 @@ namespace SitecoreCaseStudy.Models
 {
     public class News
     {
+        private ItemExtentions itemExtentions = new ItemExtentions();
         public Item Item { get; set; }
 
         public Language Language { get; set; }
 
         public MvcHtmlString Image
         {
-            get { return GetFieldValue("Image"); }
-        }
-        //Move to DI
-        public string GetImageSrc(Item item)
-        {
-            Sitecore.Data.Fields.ImageField imageField = item.Fields["Image"];
-            if (imageField != null && imageField.MediaItem != null)
-            {
-                Sitecore.Data.Items.MediaItem image = new Sitecore.Data.Items.MediaItem(imageField.MediaItem);
-                return Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(image));
-            }
-            return "";
+            get { return itemExtentions.GetFieldValue(Item, "Image"); }
         }
 
         public string ImageUrl
         {
-            get { return GetImageSrc(Item); }
+            get { return itemExtentions.GetImageSrc(Item); }
         }
 
         public MvcHtmlString Title
         {
-            get { return GetFieldValue("Title"); }
+            get { return itemExtentions.GetFieldValue(Item, "Title"); }
         }
 
         public string Date
@@ -51,45 +42,17 @@ namespace SitecoreCaseStudy.Models
        
         public MvcHtmlString Summary
         {
-            get { return GetFieldValue("Summary"); }
+            get { return itemExtentions.GetFieldValue(Item, "Summary"); }
         }
 
         public MvcHtmlString Body
         {
-            get { return GetFieldValue("Body"); }
+            get { return itemExtentions.GetFieldValue(Item, "Body"); }
         }
 
         public string NewsDetail
         {
-            get { return GetURL(Item, Language); }
-        }
-        // Move to DI
-        public Navigation BuildNavigation(Item item)
-        {
-            return new Navigation
-            {
-                NavigationTitle = item.Fields["Title"].Value,
-                NavigationLink = GetURL(item, Language),
-                ActiveClass = PageContext.Current.Item.ID == item.ID ? "Active" : string.Empty
-            };
-        }
-
-        // Move to DI
-        public string GetURL(Item item, Language language)
-        {
-            string url = LinkManager.GetItemUrl(item,
-              new UrlOptions
-              {
-                  LanguageEmbedding = LanguageEmbedding.Always,
-                  LanguageLocation = LanguageLocation.FilePath,
-                  Language = language
-              });
-            return url;
-        }
-
-        private MvcHtmlString GetFieldValue(string fieldName)
-        {
-            return new MvcHtmlString(Sitecore.Web.UI.WebControls.FieldRenderer.Render(Item, fieldName));
+            get { return itemExtentions.GetURL(Item, Language); }
         }
     }
 }

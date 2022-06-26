@@ -25,7 +25,7 @@ namespace SitecoreCaseStudy.Controllers
                     listTransaction.Add(new Transaction { Item = transaction });
                 }
             }
-            int pageSize = 1;
+            int pageSize = 8;
             int pageNumber = (page ?? 1);
             return View("~/Views/Renderings/Transaction/TransactionList.cshtml", listTransaction.ToPagedList(pageNumber, pageSize));
         }

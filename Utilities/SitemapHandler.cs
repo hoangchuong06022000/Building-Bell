@@ -10,6 +10,7 @@ namespace SitecoreCaseStudy.Utilities
 {
     public class SitemapHandler : IHttpHandler
     {
+        private ItemExtentions itemExtentions = new ItemExtentions();
         public bool IsReusable
         {
             get { return true; }
@@ -28,11 +29,13 @@ namespace SitecoreCaseStudy.Utilities
                 var urlSet = new UrlSet();
 
                 var tempUrlSet = new List<Url>();
-                var config = AppendLanguage();
 
                 tempUrlSet.Add(BuildUrl(homeItem));
 
-                var childrens = homeItem.Axes.GetDescendants();
+                var childrens = homeItem.Axes.GetDescendants().Where(x => x.TemplateName != "Transaction Category"
+                || x.TemplateName != "Transaction Category List" || x.TemplateName != "Transaction Type"
+                || x.TemplateName != "Transaction Type List");
+
                 var finalCollection = childrens.ToList();
 
                 tempUrlSet.AddRange(finalCollection.Select(childItem => BuildUrl(childItem)));
@@ -50,21 +53,21 @@ namespace SitecoreCaseStudy.Utilities
             }
         }
 
-        private static int AppendLanguage()
-        {
-            return string.IsNullOrEmpty(Sitecore.Configuration.Settings.GetSetting("LanguageEmbedForSitemap")) ? 0 : System.Convert.ToInt32((Sitecore.Configuration.Settings.GetSetting("LanguageEmbedForSitemap")));
-        }
-
         private Url BuildUrl(Item item)
         {
             return new Url
             {
-                Location = "",
+                Location = GetFullLink(itemExtentions.GetURL(item, language: Sitecore.Globalization.Language.Current)),
                 ItemName = item.Name,
                 ItemID = item.ID.ToString(),
                 ItemPath = item.Paths.FullPath,
                 LastMod = item.Statistics.Updated.ToString("yyyy-MM-dd hh:mm:ss")
             };
+        }
+
+        private string GetFullLink(string url)
+        {
+            return HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Host + url;
         }
     }
 }

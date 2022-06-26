@@ -51,11 +51,11 @@
                             <label class="TextLabel" for="email">Re-Password: </label>
                             <div class="TextInputWrapper01 TextInputSize01">
                                 <div class="TextInputWrapper02">
-                                    <input type="password" name="re-password" id="re-password" class="TextInput LightScheme" required />
+                                    <input type="password" name="rePassword" id="rePassword" class="TextInput LightScheme" required />
                                 </div>
                             </div>
                             <div class="Clr"></div>
-                            <p class="NewsLetterError MarginForgot" id="errorRePassword"></p>
+                            <p class="NewsLetterError MarginForgot" id="errorRePassword">@ViewBag.RePasswordIncorrect</p>
                         </div>
 
                         <div class="HrReplacement HrStyle01"><hr class="Hidden" /></div>
@@ -63,7 +63,7 @@
                         <div class="ButtonGroup ButtonGroupSpacing01 PaddingButton">
                             <div class="FormButtonWrapper01">
                                 <div class="FormButtonWrapper02">
-                                    <input class="CommonFormBtn" type="submit" title="Register" value="Register" onclick="return checkValidation() == true;"/>
+                                    <input class="CommonFormBtn" type="submit" title="Register" value="Register" />
                                 </div>
                             </div>
                             <div class="FormButtonWrapper01">
@@ -78,7 +78,7 @@
         </div>
     </div>
 </div>
-<script>
+@*<script>
     function checkValidation() {
         var password = document.getElementById("password").value;
         var rePassword = document.getElementById("re-password").value;
@@ -88,4 +88,4 @@
             document.getElementById("errorRePassword").innerHTML = "Re-Password Incorrect!!";
         }
     }
-</script>
+</script>*@
