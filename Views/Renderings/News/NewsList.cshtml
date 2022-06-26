@@ -1,4 +1,6 @@
-﻿@model List<SitecoreCaseStudy.Models.News>
+﻿@using PagedList.Mvc;
+@using Sitecore.Links;
+@model PagedList.IPagedList<SitecoreCaseStudy.Models.News>
 
 <div id="content">
     <div id="innerContent01">
@@ -8,6 +10,12 @@
                 <h2 class="PageHeading DarkScheme TitleLeft">News</h2>
                 <!-----Change----------->
                 <div class="Clr">
+                </div>
+                <!--Paging-->
+                <div class="BlockPageNavigation1 BlockPageNavigationMirror BlockPageNavigationMirrorSpacing01 PaddingNews">
+                    <div class="CenteringBlock">
+                        @Html.PagedListPager(Model, page => LinkManager.GetItemUrl(Sitecore.Context.Item) + "?page=" + page)
+                    </div>
                 </div>
                 <div class="HrReplacement HrStyle01 H29">
                     <hr class="Hidden" />
@@ -30,20 +38,9 @@
                 <div class="HrReplacement HrStyle01"><hr class="Hidden" /></div>
                 <!--Paging-->
                 <div class="BlockPageNavigation1 BlockPageNavigationMirror BlockPageNavigationMirrorSpacing01 PaddingNews">
-                    <a href="#" title="Prev" class="BackBtn BackBtnSmall"><span>Prev</span></a>
-
                     <div class="CenteringBlock">
-                        <ul class="PagingIndex">
-                            <li><a href="#" title="">1</a></li>
-                            <li><span>2</span></li>
-                            <li><a href="#" title="">3</a></li>
-                            <li><a href="#" title="">4</a></li>
-                            <li><a href="#" title="">5</a></li>
-                            <li><a href="#" title="">...</a></li>
-                        </ul>
+                        @Html.PagedListPager(Model, page => LinkManager.GetItemUrl(Sitecore.Context.Item) + "?page=" + page)
                     </div>
-
-                    <a href="#" title="Next" class="NextBtn NextBtnSmall"><span>Next</span></a>
                 </div>
             </div>
         </div>

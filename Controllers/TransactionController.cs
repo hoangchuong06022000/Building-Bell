@@ -1,4 +1,5 @@
-﻿using SitecoreCaseStudy.Models;
+﻿using PagedList;
+using SitecoreCaseStudy.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,9 @@ namespace SitecoreCaseStudy.Controllers
     public class TransactionController : Controller
     {
         // GET: Transaction
-        public ActionResult GetTransactionList()
+        public ActionResult GetTransactionList(int? page)
         {
+            if (page == null) page = 1;
             var item = Sitecore.Mvc.Presentation.RenderingContext.Current.Rendering.Item;
             var slideIds = Sitecore.Data.ID.ParseArray(item["Transaction List"]);
             IList<Transaction> listTransaction = new List<Transaction>();
@@ -23,14 +25,18 @@ namespace SitecoreCaseStudy.Controllers
                     listTransaction.Add(new Transaction { Item = transaction });
                 }
             }
-            
-            return View("~/Views/Renderings/Transaction/TransactionList.cshtml", listTransaction);
+            int pageSize = 1;
+            int pageNumber = (page ?? 1);
+            return View("~/Views/Renderings/Transaction/TransactionList.cshtml", listTransaction.ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult GetTransactionSearchResult()
+        public ActionResult GetTransactionSearchResult(int? page)
         {
+            if (page == null) page = 1;
+            int pageSize = 1;
+            int pageNumber = (page ?? 1);
             IList<Transaction> listTransaction = (IList<Transaction>)TempData["listTransaction"];
-            return View("~/Views/Renderings/Transaction/TransactionList.cshtml", listTransaction);
+            return View("~/Views/Renderings/Transaction/TransactionList.cshtml", listTransaction.ToPagedList(pageNumber, pageSize));
         }
 
         [HttpPost]
