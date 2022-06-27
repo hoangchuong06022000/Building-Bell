@@ -25,7 +25,7 @@ namespace SitecoreCaseStudy.Controllers
                     listNews.Add(new News { Item = news });
                 }
             }
-            int pageSize = 5;
+            int pageSize = 3;
             int pageNumber = (page ?? 1);
             return View("~/Views/Renderings/News/NewsList.cshtml", listNews.ToPagedList(pageNumber, pageSize));
         }

@@ -146,6 +146,10 @@ namespace SitecoreCaseStudy.Controllers
             {
                 ViewBag.RePasswordIncorrect = TempData["rePasswordIncorrect"].ToString();
             }
+            if (TempData.ContainsKey("existedEmail"))
+            {
+                ViewBag.ExistedEmail = TempData["existedEmail"].ToString();
+            }
             return View("~/Views/Renderings/Home/RegisterBox.cshtml");
         }
 
@@ -159,6 +163,21 @@ namespace SitecoreCaseStudy.Controllers
             if(rePassword != password)
             {
                 TempData["rePasswordIncorrect"] = "Re-Password Incorrect!!";
+                return Redirect("Register");
+            }
+            var listUserByDomain = Domain.GetDomain(domain).GetUsers();
+            IList<string> listEmail = new List<string>();
+            foreach (var user in listUserByDomain)
+            {
+                var emailUser = user.Profile.Email;
+                if (emailUser != "")
+                {
+                    listEmail.Add(emailUser);
+                }
+            }
+            if (listEmail.Contains(email))
+            {
+                TempData["existedEmail"] = "Email is existed!!";
                 return Redirect("Register");
             }
             try

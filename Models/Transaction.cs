@@ -80,12 +80,12 @@ namespace SitecoreCaseStudy.Models
 
         public string TransactionCategoryName
         {
-            get { return itemExtentions.GetSelectedItemFromDroplistField(Item, "TransactionCategory").Fields["TransactionCategoryName"].Value; }
+            get { return itemExtentions.GetSelectedItemFromDroplistField(Item, "TransactionCategory", Sitecore.Context.Language).Fields["TransactionCategoryName"].Value; }
         }
 
         public string TransactionTypeName 
         {
-            get { return itemExtentions.GetSelectedItemFromDroplistField(Item, "TransactionType").Fields["TransactionTypeName"].Value; }
+            get { return itemExtentions.GetSelectedItemFromDroplistField(Item, "TransactionType", Sitecore.Context.Language).Fields["TransactionTypeName"].Value; }
         }
     }
 }

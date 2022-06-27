@@ -29,14 +29,13 @@ namespace SitecoreCaseStudy.Utilities
                 var urlSet = new UrlSet();
 
                 var tempUrlSet = new List<Url>();
+                if (!ExcludeItemFromSitemap(homeItem))
+                {
+                    tempUrlSet.Add(BuildUrl(homeItem));
+                }
+                var childrens = homeItem.Axes.GetDescendants();
 
-                tempUrlSet.Add(BuildUrl(homeItem));
-
-                var childrens = homeItem.Axes.GetDescendants().Where(x => x.TemplateName != "Transaction Category"
-                || x.TemplateName != "Transaction Category List" || x.TemplateName != "Transaction Type"
-                || x.TemplateName != "Transaction Type List");
-
-                var finalCollection = childrens.ToList();
+                var finalCollection = childrens.Where(x => !ExcludeItemFromSitemap(x)).ToList();
 
                 tempUrlSet.AddRange(finalCollection.Select(childItem => BuildUrl(childItem)));
 
@@ -68,6 +67,17 @@ namespace SitecoreCaseStudy.Utilities
         private string GetFullLink(string url)
         {
             return HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Host + url;
+        }
+
+        private bool ExcludeItemFromSitemap(Item objItem)
+        {
+            if (objItem.Versions.Count > 0)
+            {
+                var excludeItems = Sitecore.Configuration.Settings.GetSetting("ExcludeSitecoreItemsByTemplatesInSitemap");
+                var collection = excludeItems.Split(',').ToList();
+                return collection.Contains(objItem.TemplateID.ToString());
+            }
+            return true;
         }
     }
 }

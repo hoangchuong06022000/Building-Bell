@@ -14,7 +14,7 @@ namespace SitecoreCaseStudy.Utilities
 {
     public class ItemExtentions
     {
-        public Item GetSelectedItemFromDroplistField(Item item, string fieldName)
+        public Item GetSelectedItemFromDroplistField(Item item, string fieldName, Language language)
         {
             Field field = item.Fields[fieldName];
             if (field == null || string.IsNullOrEmpty(field.Value))
@@ -24,7 +24,7 @@ namespace SitecoreCaseStudy.Utilities
 
             var fieldSource = field.Source ?? string.Empty;
             var selectedItemPath = fieldSource.TrimEnd('/') + "/" + field.Value;
-            return item.Database.GetItem(selectedItemPath);
+            return item.Database.GetItem(selectedItemPath, language);
         }
 
         public string GetImageSrc(Item item)
