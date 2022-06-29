@@ -7,15 +7,9 @@
         <div id="innerContent02">
             <div id="mainContent">
                 <!-----Change----------->
-                <h2 class="PageHeading DarkScheme TitleLeft">News</h2>
+                <h2 class="PageHeading DarkScheme TitleLeft">@Sitecore.Globalization.Translate.Text("news-title")</h2>
                 <!-----Change----------->
                 <div class="Clr">
-                </div>
-                <!--Paging-->
-                <div class="BlockPageNavigation1 BlockPageNavigationMirror BlockPageNavigationMirrorSpacing01 PaddingNews">
-                    <div class="CenteringBlock">
-                        @Html.PagedListPager(Model, page => LinkManager.GetItemUrl(Sitecore.Context.Item) + "?page=" + page)
-                    </div>
                 </div>
                 <div class="HrReplacement HrStyle01 H29">
                     <hr class="Hidden" />

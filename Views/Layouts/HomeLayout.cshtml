@@ -35,7 +35,7 @@
                     <img src="~/Content/images/logo-home.png" alt="Building Bell Logo" />
                 </div>
                 <div class="ButtonHome">
-                    <a href="/HomeCaseSudy" id="button"> <img src="~/Content/images/button-home.png" alt="Building Bell Logo" title="Building Bell Logo" /></a>
+                    <a href="#" id="button"> <img src="~/Content/images/button-home.png" alt="Building Bell Logo" title="Building Bell Logo" /></a>
                 </div>
                 <div class="MapHome">
                     <img src="~/Content/images/map-home.png" alt="Building Bell Logo" />
@@ -61,16 +61,14 @@
         <div id="Footer" class="FooterMargin">
             <div id="FooterContent">
                 <div class="FooterBlock01">
-                    <h3 class="FooterHeading"> About</h3>
+                    <h3 class="FooterHeading">@Sitecore.Globalization.Translate.Text("about-footer")</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in velit id metus
-                        dignissim tincidunt vitae vitae nulla. In tortor enim, aliquam nec semper in, rhoncus
-                        faucibus augue,...
+                        @Sitecore.Globalization.Translate.Text("about-footer-content")
                     </p>
                 </div>
                 <div class="FooterBlock02">
                     <p class="CopyrightText">
-                        &copy; @DateTime.Now.Year Buildingbell &ndash; <a href="mailto:info@buildingbell.com" title="Send mail to info@buildingbell.com"> info@buildingbell.com</a> &ndash; Legal information
+                        &copy; @DateTime.Now.Year Buildingbell &ndash; <a href="mailto:info@buildingbell.com" title="Send mail to info@buildingbell.com"> info@buildingbell.com</a>
                     </p>
                 </div>
             </div>

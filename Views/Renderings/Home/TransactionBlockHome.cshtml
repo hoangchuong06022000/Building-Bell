@@ -6,16 +6,16 @@
             </div>
             <div class="Box1Text">
                 <h3 class="TitleH2 BoxTitle TitleColor">
-                    Transaction Search
+                    @Sitecore.Globalization.Translate.Text("transaction-home")
                 </h3>
                 <div class="BoxText">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in velit id metus dignissim tincidunt vitae vitae nulla.
+                    @Sitecore.Globalization.Translate.Text("content-block")
                 </div>
                 @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
                 {
                     @Html.Sitecore().FormHandler("Home", "GetTransactionSearchResult")
                     <div class="BoxSearch">
-                        <input class="Input LightScheme" placeholder="Location..." type="text" name="stringSearch" />
+                        <input class="Input LightScheme" placeholder="@Sitecore.Globalization.Translate.Text("button-search")..." type="text" name="stringSearch" />
                         <input class="Submit" value="" type="submit" />
                     </div>
                 }
@@ -30,13 +30,13 @@
             </div>
             <div class="Box2Text">
                 <h3 class="TitleH2 Box2Title Color">
-                    Residence Locator
+                    @Sitecore.Globalization.Translate.Text("residence-home")
                 </h3>
                 <div class="BoxText2 ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in velit id metus dignissim tincidunt vitae vitae nulla.
+                    @Sitecore.Globalization.Translate.Text("content-block")
                 </div>
                 <div class="BoxSearch2">
-                    <input class="Input LightScheme" placeholder="Search..." type="text" />
+                    <input class="Input LightScheme" placeholder="@Sitecore.Globalization.Translate.Text("button-search")..." type="text" />
                     <input class="Submit1" value="" type="submit" />
                 </div>
             </div>
@@ -49,13 +49,13 @@
             </div>
             <div class="Box3Text">
                 <h3 class="TitleH2 BoxTitle Color2">
-                    Newsletter
+                    @Sitecore.Globalization.Translate.Text("newsletter")
                 </h3>
                 <div class="BoxText3 ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in velit id metus dignissim tincidunt vitae vitae nulla.
+                    @Sitecore.Globalization.Translate.Text("content-block")
                 </div>
                 <div class="BoxSearch3">
-                    <input class="Input LightScheme" placeholder="Your mail..." type="text" id="stringSearch" name="stringSearch"/>
+                    <input class="Input LightScheme" placeholder="@Sitecore.Globalization.Translate.Text("button-search")..." type="text" id="stringSearch" name="stringSearch"/>
                     <input class="Submit2" value="" type="submit" />
                 </div>
             </div>

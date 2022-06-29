@@ -7,7 +7,7 @@
         {
             @Html.Sitecore().FormHandler("Home", "Login")
             <div id="loginBoxHomeTop">
-                <h2> Login</h2>
+                <h2> @Sitecore.Globalization.Translate.Text("login")</h2>
                 <div class="InputLogin">
                     <!--Login Input-->
                     <fieldset>
@@ -15,13 +15,13 @@
                             Search
                         </legend>
                         <div class="SelectInput">
-                            <input class="InputHome LightScheme" type="text" id="userName" name="userName" placeholder="Username" required/>
+                            <input class="InputHome LightScheme" type="text" id="userName" name="userName" placeholder="@Sitecore.Globalization.Translate.Text("username")" required/>
                         </div>
                         <div class="SelectInput">
-                            <input class="InputHome LightScheme" type="password" id="password" name="password" placeholder="Password" required/>
+                            <input class="InputHome LightScheme" type="password" id="password" name="password" placeholder="@Sitecore.Globalization.Translate.Text("password")" required/>
                         </div>
                         <p class="ForgotPass">
-                            <a href="/ForgotPassword">Forgot password?</a>
+                            <a href="/ForgotPassword">@Sitecore.Globalization.Translate.Text("forgot-password")</a>
                         </p>
                     </fieldset>
                 </div>
@@ -30,12 +30,12 @@
             <div class="LoginBoxHomeHidden PaddingHiddenHome">
                 <div class="LoginButtonLeft">
 					<div class="LoginButtonRight">
-						<input type="button" value="Register" class="CommonFormBtn LoginButton" onclick="location.href='/Register'" />
+						<input type="button" value="@Sitecore.Globalization.Translate.Text("register")" class="CommonFormBtn LoginButton" onclick="location.href='/Register'" />
 					</div>
     			</div>
                 <div class="LoginButtonLeft">
                     <div class="LoginButtonRight">
-                        <input type="submit" value="Login" class="CommonFormBtn LoginButton" />
+                        <input type="submit" value="@Sitecore.Globalization.Translate.Text("login")" class="CommonFormBtn LoginButton" />
                     </div>
                 </div>
                 <div class="Clr"></div>
@@ -57,15 +57,15 @@ else
             @Html.Sitecore().FormHandler("Home", "Logout")
             <div id="loginBoxSuccess">
                 <h3>
-                    You are Logged :-)
+                    @Sitecore.Globalization.Translate.Text("logged")
                 </h3>
                 <p class="WelcomeText DarkScheme">
-                    Welcome <a href="" class="DarkScheme">@Model.Profile.FullName</a> !
+                    @Sitecore.Globalization.Translate.Text("welcome") <a href="" class="DarkScheme">@Model.Profile.FullName</a> !
                 </p>
                 <!--Change-->
                 <div class="LogoutButtonLeft">
                     <div class="LogoutButtonRight">
-                        <input type="submit" value="Logout" class="CommonFormBtn LogoutButton" />
+                        <input type="submit" value="@Sitecore.Globalization.Translate.Text("logout")" class="CommonFormBtn LogoutButton" />
                     </div>
                 </div>
                 <!--Change-->

@@ -45,7 +45,7 @@ namespace SitecoreCaseStudy.Utilities
                 Credentials = new NetworkCredential(senderEmail.Address, password)
             };
 
-            string contentMail = message + " " + newsItem.Name;
+            string contentMail = message;
 
             using (var messageToSend = new MailMessage(senderEmail, receiverEmail)
             {
@@ -66,6 +66,7 @@ namespace SitecoreCaseStudy.Utilities
 
         private string ReplaceVariables(string text, WorkflowPipelineArgs args)
         {
+            text = text.Replace("$itemName$", args.DataItem.Paths.FullPath);
             text = text.Replace("$itemPath$", args.DataItem.Paths.FullPath);
             text = text.Replace("$itemLanguage$", args.DataItem.Language.ToString());
             text = text.Replace("$itemVersion$", args.DataItem.Version.ToString());

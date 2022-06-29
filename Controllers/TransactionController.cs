@@ -1,4 +1,6 @@
 ﻿using PagedList;
+using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.SearchTypes;
 using SitecoreCaseStudy.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ namespace SitecoreCaseStudy.Controllers
 {
     public class TransactionController : Controller
     {
+        private static IList<Transaction> listTransaction;
         // GET: Transaction
         public ActionResult GetTransactionList(int? page)
         {
@@ -32,42 +35,53 @@ namespace SitecoreCaseStudy.Controllers
 
         public ActionResult GetTransactionSearchResult(int? page)
         {
+            if (TempData.ContainsKey("notFound"))
+            {
+                ViewBag.NotFound = TempData["notFound"].ToString();
+                return View("~/Views/Renderings/Transaction/TransactionList.cshtml");
+            }
             if (page == null) page = 1;
-            int pageSize = 1;
+            int pageSize = 4;
             int pageNumber = (page ?? 1);
-            IList<Transaction> listTransaction = (IList<Transaction>)TempData["listTransaction"];
+            if (TempData.ContainsKey("listTransaction"))
+            {
+                listTransaction = (List<Transaction>)TempData["listTransaction"];
+            }
             return View("~/Views/Renderings/Transaction/TransactionList.cshtml", listTransaction.ToPagedList(pageNumber, pageSize));
         }
 
         [HttpPost]
         public ActionResult GetTransactionSearchResult(string stringSearch)
         {
-            Sitecore.Data.Database database = Sitecore.Data.Database.GetDatabase("web");
-            Sitecore.Data.Items.Item[] items = database
-                .SelectItems("fast:/sitecore/content/homecasestudy/transactionlist/*[@Location = '%" + stringSearch + "%'"
-                + " or @Summary = '%" + stringSearch + "%'"
-                + " or @NumberOfFloors = '%" + stringSearch + "%'"
-                + " or @NumberOfBedRooms = '%" + stringSearch + "%'"
-                + " or @NumberOfBathRooms = '%" + stringSearch + "%'"
-                + " or @Area = '%" + stringSearch + "%'"
-                + " or @Cost = '%" + stringSearch + "%'"
-                + " or @TransactionCategoryName = '%" + stringSearch + "%'"
-                + " or @TransactionTypeName = '%" + stringSearch + "%'"
-                + " or @PropertyCondition = '%" + stringSearch + "%']");
-            IList<Transaction> listTransaction = new List<Transaction>();
-            if(items.Count() == 0)
+            using (var context = ContentSearchManager.GetIndex("sitecore_web_index").CreateSearchContext())
             {
-                items = database.SelectItems("fast:/sitecore/content/homecasestudy/transactionlist/*");
-            }
-            foreach (var transaction in items)
-            {
-                if (transaction != null)
+                var isNumber = Int32.TryParse(stringSearch, out int number);
+                var currentLanguage = Sitecore.Context.Language.ToString();
+
+                var items = context.GetQueryable<SearchResultItem>()
+                    .Where(p => p.Path.StartsWith("/sitecore/Content/homecasestudy/transactionlist"))
+                    .Where(p => p.TemplateName == "Transaction")
+                    .Where(p => p["location_t"].Contains(stringSearch) || p["propertycondition_t"].Contains(stringSearch)
+                    || p["transactiontype_s"].Contains(stringSearch) || p["transactioncategory_s"].Contains(stringSearch)
+                    || (isNumber && (p["cost_tf"] == stringSearch)) || (isNumber && (p["area_tf"] == stringSearch))
+                    || (isNumber && (p["numberofbedrooms_tf"] == stringSearch)) || (isNumber && (p["numberofbathrooms_tf"] == stringSearch))
+                    || (isNumber && (p["numberoffloors_tf"] == stringSearch)))
+                    .Where(p => p.Language == currentLanguage).ToList();
+                IList<Transaction> listTransaction = new List<Transaction>();
+                if (items.Count() == 0)
                 {
-                    listTransaction.Add(new Transaction { Item = transaction });
+                    TempData["notFound"] = "'" + stringSearch + "' not found!!";
                 }
-            }
-            TempData["listTransaction"] = listTransaction;
-            return Redirect("TransactionSearchResult");
+                foreach (var transaction in items)
+                {
+                    if (transaction != null)
+                    {
+                        listTransaction.Add(new Transaction { Item = transaction.GetItem() });
+                    }
+                }
+                TempData["listTransaction"] = listTransaction;
+                return Redirect("TransactionSearchResult");
+            }          
         }
 
         public ActionResult GetTransactionDetails()

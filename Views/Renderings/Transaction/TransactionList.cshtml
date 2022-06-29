@@ -7,16 +7,16 @@
         <div id="innerContent02">
             <div id="mainContent">
                 <!-----Change----------->
-                <h2 class="PageHeading DarkScheme TitleLeft">Transactions</h2>
+                <h2 class="PageHeading DarkScheme TitleLeft">@Sitecore.Globalization.Translate.Text("transaction-title")</h2>
                 <!-----Change----------->
                 <div class="Clr">
                 </div>
                 @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
                 {
-                    @Html.Sitecore().FormHandler("Transaction", "TransactionSearch")
+                    @Html.Sitecore().FormHandler("Transaction", "GetTransactionSearchResult")
                     <table class="FormItem LightScheme Keyword SearchBox01 SearchBox01Transsearch ">
                         <tr>
-                            <td><label for="email">Input: </label></td>
+                            <td><label for="email">@Sitecore.Globalization.Translate.Text("input"): </label></td>
                             <td colspan="2">
                                 <div class="TextInputWrapper01 TextInputSize01">
                                     <div class="TextInputWrapper02">
@@ -27,43 +27,42 @@
                             <td>
                                 <div class="FormButtonWrapper01 MarginSearchButton">
                                     <div class="FormButtonWrapper02">
-                                        <input class="CommonFormBtn" type="submit" title="Search" value="Search" />
+                                        <input class="CommonFormBtn" type="submit" title="Search" value="@Sitecore.Globalization.Translate.Text("button-search")" />
                                     </div>
                                 </div>
                             </td>
                         </tr>
                     </table>
                 }
-                <div class="BlockPageNavigation BlockPageNavigationSpacing01">
-                    <div class="CenteringBlock">
-                        @Html.PagedListPager(Model, page => LinkManager.GetItemUrl(Sitecore.Context.Item) + "?page=" + page)
-                    </div>
-                </div>
+                <p class="NewsLetterError MarginForgot" id="errorEmail">@ViewBag.NotFound</p>
                 <div class="HrReplacement HrStyle02">
                     <hr class="Hidden" />
                 </div>
                 <div class="ResultsSet">
                     <ul class="ResultsList">
-                        @foreach (var transaction in Model)
+                        @if (Model != null)
                         {
-                            <li>
-                                <div class="BlockPhoto01">
-                                    <span class="TopRoundedDecoration">&nbsp;</span>
-                                    <a href="@transaction.TransactionDetail" title="View details">@transaction.Image</a>
-                                </div>
+                            foreach (var transaction in Model)
+                            {
+                                <li>
+                                    <div class="BlockPhoto01">
+                                        <span class="TopRoundedDecoration">&nbsp;</span>
+                                        <a href="@transaction.TransactionDetail" title="View details">@transaction.Image</a>
+                                    </div>
 
-                                <p class="BlockSearchItemInfo01 LightScheme">
-                                    <span>Posted by : Admin</span>
-                                    <br />
-                                    @transaction.Location
-                                    <br />
-                                    @transaction.NumberOfBedRooms bedrooms- @transaction.NumberOfBathRooms bathrooms
-                                    <br />
-                                    @transaction.Area m<sup>2</sup>
-                                    <br />
-                                    <strong class="DarkScheme">@transaction.FormatedCost &euro;</strong>
-                                </p>
-                            </li>
+                                    <p class="BlockSearchItemInfo01 LightScheme">
+                                        <span>@Sitecore.Globalization.Translate.Text("posted")</span>
+                                        <br />
+                                        @transaction.Location
+                                        <br />
+                                        @transaction.NumberOfBedRooms @Sitecore.Globalization.Translate.Text("bed-rooms")- @transaction.NumberOfBathRooms @Sitecore.Globalization.Translate.Text("bath-rooms")
+                                        <br />
+                                        @transaction.Area m<sup>2</sup>
+                                        <br />
+                                        <strong class="DarkScheme">@transaction.FormatedCost &euro;</strong>
+                                    </p>
+                                </li>
+                            }
                         }
                     </ul>
                 </div>
@@ -72,7 +71,10 @@
                 </div>
                 <div class="BlockPageNavigation2 BlockPageNavigationMirror BlockPageNavigationMirrorSpacing01">
                     <div class="CenteringBlock">
-                        @Html.PagedListPager(Model, page => LinkManager.GetItemUrl(Sitecore.Context.Item) + "?page=" + page)
+                        @if (Model != null)
+                        {
+                            @Html.PagedListPager(Model, page => LinkManager.GetItemUrl(Sitecore.Context.Item) + "?page=" + page)
+                        }
                     </div>
                 </div>
             </div>
